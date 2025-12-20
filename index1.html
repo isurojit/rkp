@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Official Profile of CA Ravi Kumar Patwa, Central Council Member of ICAI. Managing Partner at RKP Associates with expertise in Audit, Assurance, and Financial Strategy for PSUs, Banks, and MNCs."
+    />
+    <meta
+      name="keywords"
+      content="CA Ravi Patwa, ICAI Central Council Member, Chartered Accountant Kolkata, RKP Associates, Audit Firm India, Financial Strategy, Bank Audit, PSU Audit"
+    />
+    <meta name="author" content="RKP Associates" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://rkpassociates.in/ca-ravi-kumar-patwa/"
+    />
+    <meta
+      property="og:title"
+      content="CA Ravi Kumar Patwa | Visionary Financial Leader"
+    />
+    <meta
+      property="og:description"
+      content="Central Council Member of ICAI. Leading Audit & Assurance strategies for India's largest sectors."
+    />
+    <meta
+      property="og:image"
+      content="https://rkpassociates.in/wp-content/uploads/2023/07/Ravi-Patwa.jpg"
+    />
+
+    <title>CA Ravi Kumar Patwa | Central Council Member ICAI</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              royal: "#020617",
+              surface: "#0f172a",
+              gold: "#fbbf24",
+              goldDark: "#b45309",
+              teal: "#2dd4bf",
+              tealDark: "#0f766e",
+            },
+            fontFamily: {
+              sans: ["Outfit", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            backgroundImage: {
+              "vibrant-gradient":
+                "linear-gradient(to right bottom, #020617, #0f172a, #1e1b4b)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #020617;
+        color: #e2e8f0;
+        overflow-x: hidden;
+      }
+
+      /* Vibrant Gradients */
+      .text-gradient-gold {
+        background: linear-gradient(
+          135deg,
+          #fcd34d 0%,
+          #f59e0b 50%,
+          #b45309 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: shine 5s linear infinite;
+      }
+
+      .text-gradient-teal {
+        background: linear-gradient(
+          135deg,
+          #5eead4 0%,
+          #2dd4bf 50%,
+          #3b82f6 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      @keyframes shine {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      /* Spotlight Card Effect */
+      .spotlight-card {
+        background: rgba(15, 23, 42, 0.6);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s ease;
+      }
+
+      .spotlight-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: radial-gradient(
+          800px circle at var(--mouse-x) var(--mouse-y),
+          rgba(255, 255, 255, 0.15),
+          transparent 40%
+        );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .spotlight-card:hover::before {
+        opacity: 1;
+      }
+
+      .spotlight-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 30px rgba(45, 212, 191, 0.1);
+      }
+
+      /* Parallax & Blobs */
+      .blob {
+        position: absolute;
+        filter: blur(80px);
+        border-radius: 50%;
+        opacity: 0.4;
+        z-index: -1;
+      }
+
+      /* Active Tab */
+      .tab-btn.active {
+        background: linear-gradient(90deg, #fbbf24 0%, #d97706 100%);
+        color: #020617;
+        border-color: transparent;
+        box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-teal selection:text-royal">
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-royal/98 backdrop-blur-xl z-[60] transform translate-x-full transition-transform duration-500 flex items-center justify-center"
+    >
+      <button
+        id="close-menu"
+        class="absolute top-6 right-6 text-white text-3xl hover:text-gold transition-colors"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="flex flex-col space-y-8 text-center text-3xl font-serif">
+        <a href="#profile" class="mobile-link hover:text-gold transition-colors"
+          >Profile</a
+        >
+        <a
+          href="#exposure"
+          class="mobile-link hover:text-gold transition-colors"
+          >Exposure</a
+        >
+        <a href="#firm" class="mobile-link hover:text-gold transition-colors"
+          >The Firm</a
+        >
+        <a href="#contact" class="mobile-link text-gold font-bold">Contact</a>
+      </div>
+    </div>
+
+    <nav
+      class="fixed w-full z-50 transition-all duration-300 py-4 border-b border-white/5 bg-royal/50 backdrop-blur-md"
+      id="navbar"
+    >
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold font-serif tracking-wider z-50">
+          CA RAVI <span class="text-gradient-gold">PATWA</span>
+        </a>
+
+        <div
+          class="hidden md:flex space-x-8 text-sm font-semibold tracking-widest uppercase items-center"
+        >
+          <a
+            href="#profile"
+            class="hover:text-teal transition-colors relative group py-2"
+          >
+            Profile
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal to-blue-500 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#exposure"
+            class="hover:text-teal transition-colors relative group py-2"
+          >
+            Exposure
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal to-blue-500 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#firm"
+            class="hover:text-teal transition-colors relative group py-2"
+          >
+            Firm
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal to-blue-500 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#contact"
+            class="px-6 py-2 border border-gold/30 text-gold hover:bg-gold hover:text-royal hover:shadow-[0_0_20px_rgba(251,191,36,0.6)] transition-all duration-300 rounded-full font-bold transform hover:-translate-y-1"
+          >
+            Get in Touch
+          </a>
+        </div>
+
+        <button id="open-menu" class="md:hidden text-white text-2xl z-50">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <header
+      id="home"
+      class="relative min-h-screen flex items-center pt-20 overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <div
+          class="blob bg-blue-600 w-[600px] h-[600px] top-[-100px] left-[-100px] mix-blend-screen"
+          data-speed="0.2"
+        ></div>
+        <div
+          class="blob bg-teal-500 w-[500px] h-[500px] top-[20%] right-[-100px] mix-blend-screen"
+          data-speed="-0.3"
+        ></div>
+        <div
+          class="blob bg-purple-600 w-[400px] h-[400px] bottom-[-50px] left-[20%] mix-blend-screen"
+          data-speed="0.5"
+        ></div>
+      </div>
+
+      <div
+        class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10"
+      >
+        <div class="space-y-8 hero-content">
+          <div
+            class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-teal text-xs font-bold uppercase tracking-widest backdrop-blur-md shadow-lg"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-teal animate-pulse box-shadow-teal"
+            ></span>
+            Central Council Member, ICAI
+          </div>
+
+          <h1
+            class="text-6xl md:text-8xl font-serif font-bold leading-[1.1] tracking-tight"
+          >
+            The Art of <br />
+            <span class="text-gradient-gold">Financial Vision</span>
+          </h1>
+
+          <p
+            class="text-lg text-slate-300 max-w-xl leading-relaxed border-l-2 border-teal/50 pl-6"
+          >
+            Vice Chairman of Auditing & Assurance Standards Board. A visionary
+            driving transparency and excellence in India's financial ecosystem
+            through RKP Associates.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a
+              href="#exposure"
+              class="px-8 py-4 bg-gradient-to-r from-teal to-blue-600 text-white font-bold rounded shadow-[0_0_30px_rgba(45,212,191,0.3)] hover:shadow-[0_0_50px_rgba(45,212,191,0.6)] hover:scale-105 transition-all duration-300"
+            >
+              View Portfolio
+            </a>
+            <a
+              href="https://rkpassociates.in/"
+              target="_blank"
+              class="px-8 py-4 border border-white/20 rounded hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300"
+            >
+              Firm Website
+            </a>
+          </div>
+        </div>
+
+        <div class="relative hero-image-wrapper">
+          <div
+            class="absolute -inset-4 bg-gradient-to-tr from-gold to-teal opacity-20 blur-2xl rounded-full animate-pulse"
+          ></div>
+
+          <div
+            class="relative z-10 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50 group max-w-md mx-auto transform perspective-1000"
+            data-speed="-0.1"
+          >
+            <img
+              src="https://rkpassociates.in/wp-content/uploads/2023/07/Ravi-Patwa.jpg"
+              alt="CA Ravi Kumar Patwa - Central Council Member ICAI"
+              class="w-full h-auto object-cover transform scale-100 group-hover:scale-110 transition-transform duration-[1.5s]"
+              loading="lazy"
+            />
+            <div
+              class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-royal via-royal/80 to-transparent"
+            >
+              <p
+                class="font-serif text-2xl text-white font-bold drop-shadow-lg"
+              >
+                CA Ravi Kumar Patwa
+              </p>
+              <p
+                class="text-gold text-xs uppercase tracking-widest mt-1 font-bold"
+              >
+                Senior Partner, RKP Associates
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section
+      id="exposure"
+      class="py-32 relative bg-surface/30 border-t border-white/5"
+    >
+      <div
+        class="absolute top-10 left-0 w-full text-center pointer-events-none opacity-[0.03] overflow-hidden"
+      >
+        <span
+          class="text-[12rem] font-bold font-serif whitespace-nowrap parallax-text"
+          data-speed="0.5"
+          >EXPOSURE</span
+        >
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-6xl font-serif font-bold mb-6">
+            Professional <span class="text-gradient-teal">Exposure</span>
+          </h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-teal to-blue-500 mx-auto mb-6"
+          ></div>
+          <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+            Decades of experience handling Statutory, Concurrent, and Internal
+            Audits for the nation's most critical financial institutions.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4 mb-16">
+          <button
+            onclick="filterExposure('all')"
+            class="tab-btn active px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-wider hover:border-gold transition-all"
+          >
+            All Clients
+          </button>
+          <button
+            onclick="filterExposure('banking')"
+            class="tab-btn px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-wider hover:border-gold transition-all"
+          >
+            Banking
+          </button>
+          <button
+            onclick="filterExposure('psu')"
+            class="tab-btn px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-wider hover:border-gold transition-all"
+          >
+            Central PSUs
+          </button>
+          <button
+            onclick="filterExposure('corporate')"
+            class="tab-btn px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-wider hover:border-gold transition-all"
+          >
+            Corporates
+          </button>
+          <button
+            onclick="filterExposure('govt')"
+            class="tab-btn px-8 py-3 rounded-full border border-white/10 text-sm font-bold uppercase tracking-wider hover:border-gold transition-all"
+          >
+            Govt & Auto.
+          </button>
+        </div>
+
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          id="exposure-grid"
+        >
+          <article
+            class="exposure-card banking spotlight-card p-8 rounded-2xl group cursor-default"
+          >
+            <div class="flex items-center justify-between mb-8">
+              <div
+                class="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-landmark text-2xl text-gold group-hover:scale-110 transition-transform"
+                ></i>
+              </div>
+              <span
+                class="text-xs font-bold bg-gold/10 border border-gold/20 text-gold px-3 py-1 rounded-full"
+                >20+ Years</span
+              >
+            </div>
+            <h3
+              class="text-2xl font-bold mb-3 text-white group-hover:text-gold transition-colors"
+            >
+              Public Sector Banks
+            </h3>
+            <p class="text-sm text-slate-400 mb-6 border-b border-white/5 pb-4">
+              [cite_start]Statutory & Internal Audits [cite: 39]
+            </p>
+            <div class="flex flex-wrap gap-2">
+              [cite_start]<span
+                class="px-3 py-1 bg-white/5 border border-white/5 rounded text-xs text-slate-300 hover:bg-gold/20 hover:text-gold transition-colors"
+                >SBI [cite: 40]</span
+              >
+              [cite_start]<span
+                class="px-3 py-1 bg-white/5 border border-white/5 rounded text-xs text-slate-300 hover:bg-gold/20 hover:text-gold transition-colors"
+                >PNB [cite: 40]</span
+              >
+              [cite_start]<span
+                class="px-3 py-1 bg-white/5 border border-white/5 rounded text-xs text-slate-300 hover:bg-gold/20 hover:text-gold transition-colors"
+                >Bank of Baroda [cite: 40]</span
+              >
+              [cite_start]<span
+                class="px-3 py-1 bg-white/5 border border-white/5 rounded text-xs text-slate-300 hover:bg-gold/20 hover:text-gold transition-colors"
+                >UCO Bank [cite: 40]</span
+              >
+            </div>
+          </article>
+
+          <article
+            class="exposure-card banking spotlight-card p-8 rounded-2xl group cursor-default"
+          >
+            <div class="flex items-center justify-between mb-8">
+              <div
+                class="w-14 h-14 rounded-full bg-teal/10 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-chart-pie text-2xl text-teal group-hover:scale-110 transition-transform"
+                ></i>
+              </div>
+              <span
+                class="text-xs font-bold bg-teal/10 border border-teal/20 text-teal px-3 py-1 rounded-full"
+                >Regulator</span
+              >
+            </div>
+            <h3
+              class="text-2xl font-bold mb-3 text-white group-hover:text-teal transition-colors"
+            >
+              Reserve Bank of India
+            </h3>
+            <p class="text-sm text-slate-400 mb-4">
+              [cite_start]Concurrent Audit Experience [cite: 41]
+            </p>
+            <p class="text-xs text-slate-500 italic">
+              [cite_start]Also served on State Level Co-ordination Committee for
+              NBFCs [cite: 28]
+            </p>
+          </article>
+
+          <article
+            class="exposure-card banking spotlight-card p-8 rounded-2xl group cursor-default"
+          >
+            <div class="flex items-center justify-between mb-8">
+              <div
+                class="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-credit-card text-2xl text-blue-500 group-hover:scale-110 transition-transform"
+                ></i>
+              </div>
+              <span
+                class="text-xs font-bold bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3 py-1 rounded-full"
+                >Private</span
+              >
+            </div>
+            <h3
+              class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors"
+            >
+              Private & Co-op Banks
+            </h3>
+            <p class="text-sm text-slate-400 mb-6 border-b border-white/5 pb-4">
+              [cite_start]Statutory & Internal Assignments [cite: 42, 43]
+            </p>
+            <div class="flex flex-wrap gap-2">
+              [cite_start]<span
+                class="px-3 py-1 bg-white/5 border border-white/5 rounded text-xs text-slate-300"
+                >Axis Bank [cite: 42]</span
+              >
+              [cite_start]<span
+                class="px-3 py-1 bg-white/5 border border-white/5 rounded text-xs text-slate-300"
+                >Federal Bank [cite: 42]</span
+              >
+              [cite_start]<span
+                class="px-3 py-1 bg-white/5 border border-white/5 rounded text-xs text-slate-300"
+                >Meghalaya Apex Bank [cite: 43]</span
+              >
+            </div>
+          </article>
+
+          <article
+            class="exposure-card psu spotlight-card p-8 rounded-2xl group cursor-default border-l-4 border-l-gold"
+          >
+            <div
+              class="mb-8 w-14 h-14 rounded-full bg-white/5 flex items-center justify-center"
+            >
+              <i
+                class="fas fa-burn text-2xl text-white group-hover:text-gold transition-colors"
+              ></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-white">Oil & Energy</h3>
+            <p class="text-sm text-slate-400 mb-6 border-b border-white/5 pb-4">
+              [cite_start]Audits for Maharatna/Navratna PSUs [cite: 50, 52]
+            </p>
+            <ul class="text-sm text-slate-300 space-y-2">
+              [cite_start]
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-gold text-xs"></i> Oil India Limited
+                [cite: 50]
+              </li>
+              [cite_start]
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-gold text-xs"></i> Numaligarh
+                Refinery Ltd [cite: 50]
+              </li>
+              [cite_start]
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-gold text-xs"></i> Bharat Coking
+                Coal Ltd [cite: 50]
+              </li>
+              [cite_start]
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-gold text-xs"></i> Assam Electricity
+                Grid Corp [cite: 52]
+              </li>
+            </ul>
+          </article>
+
+          <article
+            class="exposure-card psu spotlight-card p-8 rounded-2xl group cursor-default border-l-4 border-l-teal"
+          >
+            <div
+              class="mb-8 w-14 h-14 rounded-full bg-white/5 flex items-center justify-center"
+            >
+              <i
+                class="fas fa-network-wired text-2xl text-white group-hover:text-teal transition-colors"
+              ></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-white">
+              Infrastructure & Telecom
+            </h3>
+            <p class="text-sm text-slate-400 mb-6 border-b border-white/5 pb-4">
+              [cite_start]Large scale infrastructure audits [cite: 50]
+            </p>
+            <ul class="text-sm text-slate-300 space-y-2">
+              [cite_start]
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-teal text-xs"></i> Power Grid
+                Corporation Ltd [cite: 50]
+              </li>
+              [cite_start]
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-teal text-xs"></i> BSNL [cite: 50]
+              </li>
+              [cite_start]
+              <li class="flex items-center gap-2">
+                <i class="fas fa-check text-teal text-xs"></i> Food Corporation
+                of India [cite: 50]
+              </li>
+            </ul>
+          </article>
+
+          <article
+            class="exposure-card corporate spotlight-card p-8 rounded-2xl group cursor-default"
+          >
+            <div class="flex items-center justify-between mb-8">
+              <div
+                class="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center"
+              >
+                <i class="fas fa-building text-2xl text-purple-400"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-white">
+              Large Corporates & MNCs
+            </h3>
+            [cite_start]
+            <p class="text-sm text-slate-400 mb-6 border-b border-white/5 pb-4">
+              Statutory/Internal Audits [cite: 46]
+            </p>
+            <div
+              class="grid grid-cols-2 gap-y-3 gap-x-2 text-xs text-slate-300"
+            >
+              <span class="flex items-center gap-1"
+                ><i class="fas fa-circle text-[4px] text-purple-500"></i> Bharti
+                Airtel Ltd</span
+              >
+              <span class="flex items-center gap-1"
+                ><i class="fas fa-circle text-[4px] text-purple-500"></i> Tata
+                Motors Ltd</span
+              >
+              <span class="flex items-center gap-1"
+                ><i class="fas fa-circle text-[4px] text-purple-500"></i> Nestle
+                India Ltd</span
+              >
+              <span class="flex items-center gap-1"
+                ><i class="fas fa-circle text-[4px] text-purple-500"></i>
+                Hitachi</span
+              >
+              <span class="flex items-center gap-1"
+                ><i class="fas fa-circle text-[4px] text-purple-500"></i>
+                Reliance Securities</span
+              >
+              <span class="flex items-center gap-1"
+                ><i class="fas fa-circle text-[4px] text-purple-500"></i>
+                Pantaloon Fashion</span
+              >
+            </div>
+          </article>
+
+          <article
+            class="exposure-card govt spotlight-card p-8 rounded-2xl group cursor-default"
+          >
+            <div class="flex items-center justify-between mb-8">
+              <div
+                class="w-14 h-14 rounded-full bg-red-500/10 flex items-center justify-center"
+              >
+                <i class="fas fa-graduation-cap text-2xl text-red-400"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-white">Autonomous Bodies</h3>
+            <p class="text-sm text-slate-400 mb-6 border-b border-white/5 pb-4">
+              [cite_start]Education & Tech Institutions [cite: 33, 34]
+            </p>
+            <ul class="text-sm text-slate-300 space-y-2">
+              [cite_start]
+              <li class="flex items-center gap-2">
+                <i class="fas fa-caret-right text-red-400"></i> IIM Shillong
+                (Accounts Manual) [cite: 33]
+              </li>
+              [cite_start]
+              <li class="flex items-center gap-2">
+                <i class="fas fa-caret-right text-red-400"></i> Assam University
+                (Central Univ) [cite: 33]
+              </li>
+              [cite_start]
+              <li class="flex items-center gap-2">
+                <i class="fas fa-caret-right text-red-400"></i> NIELIT (formerly
+                DOACC) [cite: 34]
+              </li>
+            </ul>
+          </article>
+
+          <article
+            class="exposure-card govt spotlight-card p-8 rounded-2xl group cursor-default"
+          >
+            <div class="flex items-center justify-between mb-8">
+              <div
+                class="w-14 h-14 rounded-full bg-green-500/10 flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-hand-holding-medical text-2xl text-green-400"
+                ></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-white">
+              Govt. Aided Projects
+            </h3>
+            <p class="text-sm text-slate-400 mb-6 border-b border-white/5 pb-4">
+              [cite_start]World Bank/Asian Dev Bank Projects [cite: 54]
+            </p>
+            <ul class="text-sm text-slate-300 space-y-2">
+              <li class="flex items-center gap-2">
+                <i class="fas fa-caret-right text-green-400"></i> National Rural
+                Health Mission
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-caret-right text-green-400"></i> Sarba Siksha
+                Abhijan Mission
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fas fa-caret-right text-green-400"></i> State Aids
+                Control Society
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="firm"
+      class="py-32 bg-royal border-t border-white/5 overflow-hidden"
+    >
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+          <div class="order-2 md:order-1 relative z-10">
+            <h2 class="text-5xl md:text-6xl font-serif font-bold mb-8">
+              RKP <span class="text-gradient-gold">Associates</span>
+            </h2>
+
+            <div class="flex items-center gap-4 mb-6">
+              <div class="h-px bg-white/20 w-12"></div>
+              <h3 class="text-xl text-teal font-bold uppercase tracking-widest">
+                [cite_start]Category - I Firm [cite: 57]
+              </h3>
+            </div>
+
+            <p class="text-slate-400 leading-loose mb-10 text-lg">
+              Established by CA Ravi Kumar Patwa, RKP Associates is one of the
+              [cite_start]largest Chartered Accountant firms in North East
+              India[cite: 56]. [cite_start]Recognized as a Major Audit Firm by
+              the C&AG of India[cite: 59].
+            </p>
+
+            <div class="grid grid-cols-3 gap-6 mb-12">
+              <div
+                class="p-4 bg-white/5 rounded-lg border border-white/5 text-center hover:bg-white/10 transition-colors"
+              >
+                <p class="text-4xl font-bold text-white mb-2">20</p>
+                <p
+                  class="text-[10px] uppercase tracking-widest text-gold font-bold"
+                >
+                  [cite_start]Partners [cite: 62]
+                </p>
+              </div>
+              <div
+                class="p-4 bg-white/5 rounded-lg border border-white/5 text-center hover:bg-white/10 transition-colors"
+              >
+                <p class="text-4xl font-bold text-white mb-2">150+</p>
+                <p
+                  class="text-[10px] uppercase tracking-widest text-gold font-bold"
+                >
+                  [cite_start]Workforce [cite: 63]
+                </p>
+              </div>
+              <div
+                class="p-4 bg-white/5 rounded-lg border border-white/5 text-center hover:bg-white/10 transition-colors"
+              >
+                <p class="text-4xl font-bold text-white mb-2">9</p>
+                <p
+                  class="text-[10px] uppercase tracking-widest text-gold font-bold"
+                >
+                  [cite_start]Branches [cite: 61]
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="https://rkpassociates.in/"
+              target="_blank"
+              class="group inline-flex items-center gap-3 text-gold hover:text-white transition-colors font-bold uppercase tracking-widest text-sm"
+            >
+              Visit Firm Website
+              <i
+                class="fas fa-arrow-right transform group-hover:translate-x-2 transition-transform"
+              ></i>
+            </a>
+          </div>
+
+          <div class="order-1 md:order-2 relative perspective-1000">
+            <div
+              class="absolute -inset-10 bg-gradient-to-r from-teal to-blue-600 opacity-20 blur-[100px] animate-pulse"
+            ></div>
+
+            <div
+              class="relative bg-[#0b1221] p-10 rounded-3xl border border-white/10 shadow-2xl transform rotate-y-12 hover:rotate-0 transition-transform duration-700 ease-out"
+              data-speed="0.2"
+            >
+              <h4
+                class="text-2xl font-serif font-bold text-white mb-8 border-b border-white/10 pb-6 flex justify-between items-center"
+              >
+                Nationwide Presence
+                <i class="fas fa-map text-white/20"></i>
+              </h4>
+              <div
+                class="grid grid-cols-2 gap-x-4 gap-y-6 text-sm text-slate-300"
+              >
+                <div class="flex items-center gap-3 group">
+                  <span
+                    class="w-8 h-8 rounded-full bg-teal/10 flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-black transition-all"
+                    ><i class="fas fa-map-marker-alt"></i
+                  ></span>
+                  <span>Kolkata (HO)</span>
+                </div>
+                <div class="flex items-center gap-3 group">
+                  <span
+                    class="w-8 h-8 rounded-full bg-teal/10 flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-black transition-all"
+                    ><i class="fas fa-map-marker-alt"></i
+                  ></span>
+                  <span>Guwahati</span>
+                </div>
+                <div class="flex items-center gap-3 group">
+                  <span
+                    class="w-8 h-8 rounded-full bg-teal/10 flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-black transition-all"
+                    ><i class="fas fa-map-marker-alt"></i
+                  ></span>
+                  <span>New Delhi</span>
+                </div>
+                <div class="flex items-center gap-3 group">
+                  <span
+                    class="w-8 h-8 rounded-full bg-teal/10 flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-black transition-all"
+                    ><i class="fas fa-map-marker-alt"></i
+                  ></span>
+                  <span>Bhubaneswar</span>
+                </div>
+                <div class="flex items-center gap-3 group">
+                  <span
+                    class="w-8 h-8 rounded-full bg-teal/10 flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-black transition-all"
+                    ><i class="fas fa-map-marker-alt"></i
+                  ></span>
+                  <span>Patna</span>
+                </div>
+                <div class="flex items-center gap-3 group">
+                  <span
+                    class="w-8 h-8 rounded-full bg-teal/10 flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-black transition-all"
+                    ><i class="fas fa-map-marker-alt"></i
+                  ></span>
+                  <span>Ranchi</span>
+                </div>
+              </div>
+              <div
+                class="absolute -top-6 -right-6 bg-gold text-black font-bold p-4 rounded-xl shadow-lg transform rotate-6 border-2 border-white"
+              >
+                9+ Cities
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      id="contact"
+      class="bg-black pt-24 pb-12 border-t border-white/5 relative"
+    >
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-teal to-transparent opacity-50"
+      ></div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="grid md:grid-cols-2 gap-16 mb-20">
+          <div>
+            <h2 class="text-5xl font-serif font-bold text-white mb-10">
+              Let's <span class="text-gradient-gold">Collaborate</span>
+            </h2>
+            <div class="space-y-8 text-slate-400 text-lg">
+              <p class="flex items-center gap-6 group">
+                <span
+                  class="w-12 h-12 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-all duration-300"
+                  ><i class="fas fa-envelope"></i
+                ></span>
+                <a
+                  href="mailto:ravipatwa@hotmail.com"
+                  class="hover:text-white transition-colors border-b border-transparent hover:border-gold"
+                  >ravipatwa@hotmail.com</a
+                >
+              </p>
+              <p class="flex items-center gap-6 group">
+                <span
+                  class="w-12 h-12 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black transition-all duration-300"
+                  ><i class="fas fa-phone"></i
+                ></span>
+                [cite_start]<span>+91 94350 71192 [cite: 112]</span>
+              </p>
+              <p class="flex items-start gap-6 group">
+                <span
+                  class="w-12 h-12 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-gold shrink-0 group-hover:bg-gold group-hover:text-black transition-all duration-300"
+                  ><i class="fas fa-map-pin"></i
+                ></span>
+                <span>
+                  4M, New Town Square, Chinar Park,<br />
+                  [cite_start]Rajarhat, Kolkata-700136 [cite: 107-109]
+                </span>
+              </p>
+            </div>
+
+            <div class="flex gap-4 mt-12">
+              <a
+                href="https://www.linkedin.com/in/ravi-kumar-patwa-6760015/"
+                target="_blank"
+                class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#0077b5] hover:text-white hover:-translate-y-2 transition-all duration-300 text-slate-400 text-xl"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://x.com/ravipatwa"
+                target="_blank"
+                class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-black hover:border hover:border-white hover:text-white hover:-translate-y-2 transition-all duration-300 text-slate-400 text-xl"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/caravipatwa/"
+                target="_blank"
+                class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#1877F2] hover:text-white hover:-translate-y-2 transition-all duration-300 text-slate-400 text-xl"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+            </div>
+          </div>
+
+          <div
+            class="bg-surface/50 p-8 rounded-3xl border border-white/10 backdrop-blur-md shadow-2xl"
+          >
+            <h3 class="text-2xl font-bold text-white mb-8">Send a Message</h3>
+            <form
+              class="space-y-5"
+              onsubmit="event.preventDefault(); alert('Thank you. Message simulated.');"
+            >
+              <div class="grid grid-cols-2 gap-5">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  class="w-full bg-[#050b14] border border-white/10 rounded-xl p-4 text-white focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all placeholder:text-slate-600"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="w-full bg-[#050b14] border border-white/10 rounded-xl p-4 text-white focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all placeholder:text-slate-600"
+                />
+              </div>
+              <textarea
+                rows="4"
+                placeholder="Message"
+                class="w-full bg-[#050b14] border border-white/10 rounded-xl p-4 text-white focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all placeholder:text-slate-600"
+              ></textarea>
+              <button
+                class="w-full bg-gradient-to-r from-gold to-orange-500 text-royal font-bold py-4 rounded-xl hover:shadow-[0_0_20px_rgba(251,191,36,0.5)] transition-all uppercase tracking-widest text-sm transform hover:scale-[1.02]"
+              >
+                Submit Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-center border-t border-white/5 pt-8 text-slate-600 text-sm"
+        >
+          <p>&copy; 2025 CA Ravi Kumar Patwa. All Rights Reserved.</p>
+          <p>
+            Powered by
+            <a
+              href="#"
+              class="text-teal hover:text-white transition-colors font-bold"
+              >WebRefactor</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. Mouse Tracking Spotlight Effect
+      document.getElementById("exposure-grid").onmousemove = (e) => {
+        for (const card of document.getElementsByClassName("spotlight-card")) {
+          const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+
+          card.style.setProperty("--mouse-x", `${x}px`);
+          card.style.setProperty("--mouse-y", `${y}px`);
+        }
+      };
+
+      // 2. Parallax Animations (Scrubbing)
+      gsap.utils.toArray("[data-speed]").forEach((layer) => {
+        const speed = layer.getAttribute("data-speed");
+        gsap.to(layer, {
+          y: (i, target) => ScrollTrigger.maxScroll(window) * speed,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "body",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 0.5, // Smoother scrub
+          },
+        });
+      });
+
+      // 3. Hero Reveal
+      const tl = gsap.timeline();
+      tl.from(".hero-content > *", {
+        y: 50,
+        opacity: 0,
+        duration: 1.2,
+        stagger: 0.1,
+        ease: "power4.out",
+      }).from(
+        ".hero-image-wrapper",
+        {
+          x: 50,
+          opacity: 0,
+          duration: 1.5,
+          ease: "power3.out",
+        },
+        "-=1"
+      );
+
+      // 4. Tab Filter Logic
+      function filterExposure(category) {
+        const cards = document.querySelectorAll(".exposure-card");
+        const buttons = document.querySelectorAll(".tab-btn");
+
+        buttons.forEach((btn) => {
+          btn.classList.remove("active");
+          if (btn.getAttribute("onclick").includes(category)) {
+            btn.classList.add("active");
+          }
+        });
+
+        const grid = document.getElementById("exposure-grid");
+
+        gsap.to(grid, {
+          opacity: 0,
+          y: 10,
+          duration: 0.3,
+          onComplete: () => {
+            cards.forEach((card) => {
+              if (category === "all" || card.classList.contains(category)) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+            gsap.to(grid, { opacity: 1, y: 0, duration: 0.5 });
+
+            // Stagger reveal
+            gsap.fromTo(
+              "#exposure-grid > article[style='display: block;']",
+              { y: 30, opacity: 0 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.5,
+                stagger: 0.05,
+                ease: "power2.out",
+              }
+            );
+          },
+        });
+      }
+
+      // 5. Navbar Glass Effect
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          nav.classList.add("bg-royal/90", "shadow-2xl", "border-b-gold/20");
+          nav.classList.remove("bg-royal/50", "border-b-white/5");
+        } else {
+          nav.classList.remove("bg-royal/90", "shadow-2xl", "border-b-gold/20");
+          nav.classList.add("bg-royal/50", "border-b-white/5");
+        }
+      });
+
+      // 6. Mobile Menu
+      const menuBtn = document.getElementById("open-menu");
+      const closeBtn = document.getElementById("close-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      function toggleMenu() {
+        mobileMenu.classList.toggle("translate-x-full");
+        document.body.classList.toggle("overflow-hidden");
+      }
+
+      menuBtn.addEventListener("click", toggleMenu);
+      closeBtn.addEventListener("click", toggleMenu);
+      mobileLinks.forEach((link) => link.addEventListener("click", toggleMenu));
+    </script>
+  </body>
+</html>
