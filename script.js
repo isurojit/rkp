@@ -1,117 +1,107 @@
-// Register GSAP Plugin
-gsap.registerPlugin(ScrollTrigger);
+// Navigation Toggle
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
 
-// --- Mobile Menu Logic ---
-const menuBtn = document.getElementById("menu-btn");
-const mobileMenu = document.getElementById("mobile-menu");
-const mobileLinks = document.querySelectorAll(".mobile-link");
-const body = document.body;
-
-let isMenuOpen = false;
-
-menuBtn.addEventListener("click", toggleMenu);
-
-function toggleMenu() {
-  isMenuOpen = !isMenuOpen;
-
-  if (isMenuOpen) {
-    // Open Menu
-    mobileMenu.style.pointerEvents = "auto";
-    body.classList.add("menu-open"); // Prevent scrolling
-    menuBtn.classList.add("hamburger-active");
-
-    gsap.to(mobileMenu, {
-      x: "0%",
-      opacity: 1,
-      duration: 0.5,
-      ease: "power3.out",
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
     });
-
-    gsap.fromTo(
-      mobileLinks,
-      { y: 30, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.4,
-        stagger: 0.1,
-        delay: 0.2,
-        ease: "power2.out",
-      }
-    );
-  } else {
-    // Close Menu
-    mobileMenu.style.pointerEvents = "none";
-    body.classList.remove("menu-open");
-    menuBtn.classList.remove("hamburger-active");
-
-    gsap.to(mobileMenu, {
-      x: "100%",
-      opacity: 0,
-      duration: 0.5,
-      ease: "power3.in",
-    });
-  }
 }
 
-// Close menu when clicking a link
-mobileLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    if (isMenuOpen) toggleMenu();
-  });
+// Close mobile menu when clicking a link
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
 });
 
-// --- Existing Animations ---
+// Navbar scroll effect
+let lastScroll = 0;
+const navbar = document.querySelector('.navbar');
 
-// Hero Text Reveal
-window.addEventListener("load", () => {
-  gsap.to(".split-text-reveal", {
-    y: 0,
-    opacity: 1,
-    duration: 1.2,
-    stagger: 0.2,
-    ease: "power4.out",
-  });
-});
-
-// Marquee Clone
-const marqueeWrapper = document.querySelector(".marquee-wrapper");
-const marqueeContent = document.querySelector(".marquee-content");
-
-if (marqueeContent && marqueeWrapper) {
-  const clone = marqueeContent.cloneNode(true);
-  marqueeWrapper.appendChild(clone);
-}
-
-// Scroll Trigger Animations
-const fadeElements = document.querySelectorAll(".group, h2, p, .social-card");
-
-fadeElements.forEach((el) => {
-  gsap.from(el, {
-    scrollTrigger: {
-      trigger: el,
-      start: "top 90%",
-      toggleActions: "play none none reverse",
-    },
-    y: 30,
-    opacity: 0,
-    duration: 0.8,
-    ease: "power3.out",
-  });
-});
-
-// Navbar Scroll Logic
-const navbar = document.getElementById("navbar");
-window.addEventListener(
-  "scroll",
-  () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add("bg-midnight/90", "shadow-lg");
-      navbar.classList.remove("border-transparent");
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        navbar.style.boxShadow = '0 2px 16px rgba(0, 0, 0, 0.1)';
     } else {
-      navbar.classList.remove("bg-midnight/90", "shadow-lg");
-      navbar.classList.add("border-transparent");
+        navbar.style.boxShadow = 'none';
     }
-  },
-  { passive: true }
-);
+    
+    lastScroll = currentScroll;
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Intersection Observer for animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe elements with animation classes
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.position-card, .timeline-item, .exposure-card, .achievement-card');
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(el);
+    });
+});
+
+// Counter animation for stats
+function animateCounter(element, target, duration = 2000) {
+    let current = 0;
+    const increment = target / (duration / 16);
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 16);
+}
+
+// Animate counters when they come into view
+const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            const number = entry.target.querySelector('.stat-number');
+            if (number) {
+                const target = parseInt(number.textContent);
+                number.textContent = '0';
+                animateCounter(number, target);
+                entry.target.classList.add('animated');
+            }
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-item').forEach(stat => {
+    statObserver.observe(stat);
+});

@@ -1,899 +1,730 @@
-<!DOCTYPE html>
-<html lang="en" class="antialiased selection:bg-gold selection:text-midnight">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CA Ravi Kumar Patwa | The Financial Architect</title>
-    <meta
-      name="description"
-      content="Official Portfolio of CA Ravi Kumar Patwa. Central Council Member of ICAI, Managing Partner at RKP Associates."
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>CA Ravi Kumar Patwa - Chartered Accountant</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Instrument+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              midnight: "#020410",
-              royal: "#0F172A",
-              gold: "#FFD700",
-              goldDark: "#B8860B",
-              goldLight: "#FDE68A",
-              surface: "rgba(255, 255, 255, 0.03)",
-            },
-            fontFamily: {
-              serif: ['"Cinzel"', "serif"],
-              sans: ['"Outfit"', "sans-serif"],
-            },
-            backgroundImage: {
-              "hero-glow":
-                "conic-gradient(from 180deg at 50% 50%, #020410 0deg, #1e1b4b 180deg, #020410 360deg)",
-              noise:
-                "url('https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/images/wireframe/image.png')", // Placeholder for noise
-            },
-          },
-        },
-      };
-    </script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-
-  <body class="bg-midnight text-slate-300 overflow-x-hidden">
-    <div
-      class="fixed inset-0 bg-noise opacity-[0.03] pointer-events-none z-50"
-    ></div>
-
-    <nav
-      class="fixed top-0 left-0 w-full z-[100] border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300"
-      id="navbar"
-    >
-      <a
-        href="https://rkpassociates.in/ca-ravi-kumar-patwa/"
-        target="_blank"
-        class="group flex items-center gap-3 relative z-[101]"
-      >
-        <div
-          class="w-10 h-10 bg-gradient-to-tr from-goldDark to-gold rounded-full flex items-center justify-center text-midnight font-bold font-serif text-xl shadow-[0_0_15px_rgba(255,215,0,0.3)]"
-        >
-          RP
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-brand">
+          <span class="brand-name">CA RAVI KUMAR PATWA</span>
         </div>
-        <div class="block leading-tight">
-          <span
-            class="block text-white font-serif tracking-widest text-xs md:text-sm group-hover:text-gold transition-colors"
-            >CA RAVI PATWA</span
-          >
-          <span
-            class="block text-[8px] md:text-[10px] text-slate-500 uppercase tracking-widest"
-            >Visionary Leader</span
-          >
+        <div class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="profile.html" class="nav-link">Profile</a>
+          <a href="media.html" class="nav-link">Media & Resources</a>
+          <a href="contributions.html" class="nav-link">Contributions</a>
+          <a href="contact.html" class="nav-link">Contact</a>
         </div>
-      </a>
-
-      <div
-        class="hidden lg:flex gap-10 text-xs font-bold tracking-[0.2em] uppercase text-slate-400"
-      >
-        <a
-          href="#about"
-          class="hover:text-gold transition-colors hover:scale-105 transform duration-200"
-          >The Persona</a
-        >
-        <a
-          href="#expertise"
-          class="hover:text-gold transition-colors hover:scale-105 transform duration-200"
-          >Expertise</a
-        >
-        <a
-          href="#firm"
-          class="hover:text-gold transition-colors hover:scale-105 transform duration-200"
-          >The Firm</a
-        >
-        <a
-          href="#socials"
-          class="hover:text-gold transition-colors hover:scale-105 transform duration-200"
-          >Connect</a
-        >
+        <div class="nav-toggle" id="navToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-
-      <a
-        href="mailto:ravipatwa@hotmail.com"
-        class="hidden lg:block relative px-8 py-3 bg-white/5 border border-gold/30 rounded-full text-gold text-xs font-bold uppercase tracking-widest overflow-hidden group hover:border-gold hover:shadow-[0_0_20px_rgba(255,215,0,0.2)] transition-all duration-300"
-      >
-        <span
-          class="relative z-10 group-hover:text-midnight transition-colors duration-300"
-          >Get in Touch</span
-        >
-        <div
-          class="absolute inset-0 bg-gold transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"
-        ></div>
-      </a>
-
-      <button
-        id="menu-btn"
-        class="lg:hidden relative z-[101] text-gold focus:outline-none"
-        aria-label="Toggle Menu"
-      >
-        <div class="w-8 h-8 flex flex-col justify-center gap-1.5">
-          <span
-            class="block w-8 h-[2px] bg-gold transition-all duration-300 origin-center"
-          ></span>
-          <span
-            class="block w-8 h-[2px] bg-gold transition-all duration-300 origin-center"
-          ></span>
-          <span
-            class="block w-5 h-[2px] bg-gold transition-all duration-300 ml-auto origin-center"
-          ></span>
-        </div>
-      </button>
     </nav>
 
-    <div
-      id="mobile-menu"
-      class="fixed inset-0 bg-midnight/95 backdrop-blur-xl z-[90] transform translate-x-full transition-transform duration-500 ease-out flex flex-col justify-center items-center opacity-0 pointer-events-none lg:hidden"
-    >
-      <div class="flex flex-col gap-8 text-center">
-        <a
-          href="#about"
-          class="mobile-link text-2xl font-serif text-white hover:text-gold transition-colors"
-          >The Persona</a
-        >
-        <a
-          href="#expertise"
-          class="mobile-link text-2xl font-serif text-white hover:text-gold transition-colors"
-          >Expertise</a
-        >
-        <a
-          href="#firm"
-          class="mobile-link text-2xl font-serif text-white hover:text-gold transition-colors"
-          >The Firm</a
-        >
-        <a
-          href="#socials"
-          class="mobile-link text-2xl font-serif text-white hover:text-gold transition-colors"
-          >Connect</a
-        >
-        <a
-          href="mailto:ravipatwa@hotmail.com"
-          class="mt-4 px-8 py-3 bg-gold text-midnight font-bold uppercase tracking-widest rounded-full"
-          >Get In Touch</a
-        >
-      </div>
-      <div
-        class="absolute bottom-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-[80px]"
-      ></div>
-    </div>
-
-    <header
-      class="relative min-h-screen flex flex-col justify-center items-center px-4 overflow-hidden pt-20"
-    >
-      <div class="absolute inset-0 bg-hero-glow opacity-30"></div>
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-blue-900/20 rounded-full blur-[80px]"
-      ></div>
-
-      <div class="relative z-10 text-center space-y-6 max-w-6xl mx-auto">
-        <div
-          class="inline-block px-4 py-2 rounded-full border border-gold/20 bg-gold/5 backdrop-blur-sm mb-4 animate-fade-in-up"
-        >
-          <span
-            class="text-gold text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em]"
-            ><i class="fas fa-certificate mr-2"></i>Central Council Member,
-            ICAI</span
-          >
-        </div>
-
-        <h1
-          class="font-serif text-5xl md:text-7xl lg:text-9xl leading-[1.1] text-white"
-        >
-          <span class="block split-text-reveal">STRATEGIC</span>
-          <span class="block text-gradient-gold font-bold split-text-reveal"
-            >INTEGRITY</span
-          >
-        </h1>
-
-        <p
-          class="text-base md:text-2xl font-light text-slate-300 max-w-3xl mx-auto leading-relaxed mt-8 opacity-0 animate-delay-fade px-4"
-        >
-          Architecting the financial governance of India's largest institutions.
-          Vice Chairman of the
-          <span class="text-gold font-medium block md:inline"
-            >Auditing & Assurance Standards Board</span
-          >.
-        </p>
-
-        <div
-          class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-12 opacity-0 animate-delay-fade-2 w-full px-6 sm:w-auto"
-        >
-          <a
-            href="#about"
-            class="w-full sm:w-auto px-10 py-4 bg-gold text-midnight font-bold tracking-widest uppercase text-xs rounded-sm hover:bg-white transition-colors shadow-lg shadow-gold/20"
-          >
-            Explore Profile
-          </a>
-          <a
-            href="https://rkpassociates.in/"
-            target="_blank"
-            class="w-full sm:w-auto px-10 py-4 border border-white/20 text-white font-bold tracking-widest uppercase text-xs rounded-sm hover:bg-white/10 transition-colors"
-          >
-            View The Firm
-          </a>
-        </div>
-      </div>
-    </header>
-
-    <div
-      class="bg-royal/50 border-y border-white/5 py-4 md:py-6 overflow-hidden backdrop-blur-sm relative z-20"
-    >
-      <div class="marquee-wrapper flex gap-16 whitespace-nowrap">
-        <div
-          class="marquee-content flex gap-12 md:gap-16 text-xs md:text-sm font-serif tracking-[0.2em] text-slate-400 uppercase items-center"
-        >
-          <span class="flex items-center"
-            ><i class="fas fa-star text-gold mr-3 md:mr-4"></i>Vice Chairman,
-            AASB</span
-          >
-          <span class="flex items-center"
-            ><i class="fas fa-university text-gold mr-3 md:mr-4"></i>Trustee,
-            Hindustan Medical Inst.</span
-          >
-          <span class="flex items-center"
-            ><i class="fas fa-gavel text-gold mr-3 md:mr-4"></i>Past Chairman,
-            EIRC</span
-          >
-          <span class="flex items-center"
-            ><i class="fas fa-chart-line text-gold mr-3 md:mr-4"></i>Advisor,
-            IIA</span
-          >
-          <span class="flex items-center"
-            ><i class="fas fa-building text-gold mr-3 md:mr-4"></i>Category-I
-            Audit Firm</span
-          >
-        </div>
-      </div>
-    </div>
-
-    <section id="about" class="py-20 md:py-32 relative">
-      <div class="container mx-auto px-6 md:px-12">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div class="relative group mx-auto max-w-md lg:max-w-full">
-            <div
-              class="absolute -inset-4 border-2 border-gold/20 rounded-lg transform rotate-6 transition-transform duration-700 group-hover:rotate-0 hidden md:block"
-            ></div>
-            <div
-              class="absolute -inset-4 border-2 border-blue-500/20 rounded-lg transform -rotate-3 transition-transform duration-700 group-hover:rotate-0 hidden md:block"
-            ></div>
-
-            <div class="relative rounded-lg overflow-hidden shadow-2xl">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent z-10 opacity-60"
-              ></div>
-              <img
-                src="CA_Ravi_Kumar_Patwa.png"
-                alt="CA Ravi Patwa"
-                class="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-105 grayscale group-hover:grayscale-0"
-              />
-
-              <div class="absolute bottom-6 left-6 md:bottom-8 md:left-8 z-20">
-                <h3 class="text-2xl md:text-4xl font-serif text-white mb-2">
-                  The Visionary
-                </h3>
-                <p
-                  class="text-gold text-[10px] md:text-xs uppercase tracking-widest"
-                >
-                  3 Decades of Excellence
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-text">
+              <div class="hero-label fade-in">Chartered Accountant</div>
+              <h1 class="hero-title fade-in-up">CA Ravi Kumar Patwa</h1>
+              <p class="hero-subtitle fade-in-up delay-1">
+                Managing Partner, RKP Associates
+              </p>
+              <div class="hero-description fade-in-up delay-2">
+                <p>
+                  Leading the accounting profession across Eastern India with
+                  distinction, expertise, and unwavering commitment to
+                  excellence for over two decades.
                 </p>
               </div>
-            </div>
-          </div>
-
-          <div class="space-y-8 md:space-y-10">
-            <div>
-              <h2
-                class="text-gold text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4"
-              >
-                About The Leader
-              </h2>
-              <h3
-                class="text-3xl md:text-5xl font-serif text-white leading-tight"
-              >
-                A Legacy of
-                <span
-                  class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-goldLight"
-                  >"Firsts"</span
-                >
-                & Stewardship.
-              </h3>
-            </div>
-
-            <p class="text-slate-400 leading-relaxed text-base md:text-lg">
-              Governance is not merely about compliance; it is the architectural
-              integrity of our nation's economic future. From securing
-              <strong>All India Ranks</strong> to becoming the first EIRC
-              Chairman elected from outside the headquarters, my journey has
-              been defined by breaking barriers.
-            </p>
-
-            <div
-              class="grid grid-cols-2 gap-4 md:gap-8 pt-6 border-t border-white/10"
-            >
-              <div class="space-y-1">
-                <span class="block text-3xl md:text-4xl font-serif text-white"
-                  >06</span
-                >
-                <span
-                  class="block text-gold text-[10px] md:text-xs uppercase tracking-widest"
-                  >All India Rank (DISA)</span
-                >
+              <div class="hero-stats fade-in-up delay-3">
+                <div class="stat-item">
+                  <div class="stat-number">20+</div>
+                  <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">9</div>
+                  <div class="stat-label">Office Locations</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">152</div>
+                  <div class="stat-label">Team Members</div>
+                </div>
               </div>
-              <div class="space-y-1">
-                <span class="block text-3xl md:text-4xl font-serif text-white"
-                  >#1</span
+              <div class="hero-cta fade-in-up delay-4">
+                <a href="profile.html" class="btn btn-primary"
+                  >Explore Profile</a
                 >
-                <span
-                  class="block text-gold text-[10px] md:text-xs uppercase tracking-widest"
-                  >Regional Pioneer</span
-                >
-              </div>
-              <div class="space-y-1">
-                <span class="block text-3xl md:text-4xl font-serif text-white"
-                  >20+</span
-                >
-                <span
-                  class="block text-gold text-[10px] md:text-xs uppercase tracking-widest"
-                  >Yrs Banking Audit</span
-                >
-              </div>
-              <div class="space-y-1">
-                <span class="block text-3xl md:text-4xl font-serif text-white"
-                  >02</span
-                >
-                <span
-                  class="block text-gold text-[10px] md:text-xs uppercase tracking-widest"
-                  >National Awards</span
-                >
+                <a href="contact.html" class="btn btn-outline">Get in Touch</a>
               </div>
             </div>
-
-            <a
-              href="https://rkpassociates.in/ca-ravi-kumar-patwa/"
-              target="_blank"
-              class="inline-flex items-center text-white hover:text-gold transition-colors uppercase tracking-widest text-xs font-bold mt-4"
-            >
-              Read Full Biography <i class="fas fa-arrow-right ml-3"></i>
-            </a>
+            <div class="hero-image fade-in-right">
+              <div class="image-frame">
+                <img src="./img/img-3.jpeg" alt="CA Ravi Kumar Patwa" />
+                <div class="image-accent"></div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="scroll-indicator">
+        <span></span>
       </div>
     </section>
 
-    <section
-      id="expertise"
-      class="py-20 md:py-32 bg-royal relative overflow-hidden"
-    >
-      <div
-        class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"
-      ></div>
-
-      <div class="container mx-auto px-6 md:px-12 relative z-10">
-        <div class="text-center max-w-4xl mx-auto mb-16 md:mb-20">
-          <span class="text-gold text-xs font-bold tracking-[0.3em] uppercase"
-            >Core Competencies</span
-          >
-          <h2 class="text-3xl md:text-6xl font-serif text-white mt-4 mb-6">
-            A Spectrum of
-            <span class="text-gradient-gold">Financial Mastery</span>
-          </h2>
-          <p class="text-slate-400 text-base md:text-lg">
-            From Statutory Central Audits of India's largest banks to strategic
-            financial planning for Maharatna PSUs.
+    <!-- Current Positions -->
+    <section class="current-positions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Leadership & Authority</span>
+          <h2 class="section-title">Current Positions</h2>
+          <p class="section-description">
+            Holding key positions in prestigious organizations
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6 md:gap-8 mb-16 md:mb-20">
-          <div
-            class="group bg-midnight border border-white/5 p-8 md:p-10 rounded-2xl hover:border-gold/30 transition-all duration-300 relative overflow-hidden"
-          >
-            <div
-              class="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            ></div>
-
-            <div class="relative z-10">
-              <div class="flex items-center justify-between mb-8">
-                <div
-                  class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gold/10 flex items-center justify-center text-gold text-xl md:text-2xl group-hover:bg-gold group-hover:text-black transition-colors duration-300"
-                >
-                  <i class="fas fa-university"></i>
-                </div>
-                <span
-                  class="px-3 py-1 rounded-full border border-white/10 text-[9px] md:text-[10px] text-slate-400 uppercase tracking-widest group-hover:border-gold group-hover:text-gold transition-colors"
-                  >Core Specialization</span
-                >
-              </div>
-
-              <h4 class="text-2xl md:text-3xl font-serif text-white mb-4">
-                Banking & Finance
-              </h4>
-              <p class="text-slate-400 mb-8 text-sm leading-relaxed">
-                Two decades of experience in handling high-volume financial
-                data, ensuring regulatory compliance (RBI), and mitigating
-                credit risks.
-              </p>
-
-              <ul
-                class="space-y-4 text-sm text-slate-300 border-t border-white/10 pt-6"
+        <div class="positions-grid">
+          <div class="position-card highlight">
+            <div class="position-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
               >
-                <li class="flex items-start">
-                  <i
-                    class="fas fa-check-circle text-gold mt-1 mr-3 flex-shrink-0"
-                  ></i>
-                  <div>
-                    <strong class="text-white block mb-1"
-                      >Statutory Central Audits (SCA)</strong
-                    >
-                    <span class="text-slate-500 text-xs"
-                      >Auditing Apex Banks like SBI & PNB.</span
-                    >
-                  </div>
-                </li>
-              </ul>
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
             </div>
+            <h3>Central Council Member</h3>
+            <p class="position-org">ICAI</p>
+            <p class="position-desc">
+              Elected representative on the national governing body of Chartered
+              Accountants
+            </p>
           </div>
 
-          <div
-            class="group bg-midnight border border-white/5 p-8 md:p-10 rounded-2xl hover:border-blue-400/30 transition-all duration-300 relative overflow-hidden"
-          >
-            <div
-              class="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            ></div>
-
-            <div class="relative z-10">
-              <div class="flex items-center justify-between mb-8">
-                <div
-                  class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-blue-900/20 flex items-center justify-center text-blue-400 text-xl md:text-2xl group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300"
-                >
-                  <i class="fas fa-industry"></i>
-                </div>
-                <span
-                  class="px-3 py-1 rounded-full border border-white/10 text-[9px] md:text-[10px] text-slate-400 uppercase tracking-widest group-hover:border-blue-400 group-hover:text-blue-400 transition-colors"
-                  >Government Sector</span
-                >
-              </div>
-
-              <h4 class="text-2xl md:text-3xl font-serif text-white mb-4">
-                PSUs & Infrastructure
-              </h4>
-              <p class="text-slate-400 mb-8 text-sm leading-relaxed">
-                Empaneled with the C&AG of India as a Major Audit Firm. Handling
-                complex assignments for Energy, Mining, and Transport sectors.
-              </p>
-
-              <ul
-                class="space-y-4 text-sm text-slate-300 border-t border-white/10 pt-6"
+          <div class="position-card">
+            <div class="position-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
               >
-                <li class="flex items-start">
-                  <i
-                    class="fas fa-check-circle text-blue-400 mt-1 mr-3 flex-shrink-0"
-                  ></i>
-                  <div>
-                    <strong class="text-white block mb-1"
-                      >Maharatna Audits</strong
-                    >
-                    <span class="text-slate-500 text-xs"
-                      >Oil, Natural Gas, Engineering.</span
-                    >
-                  </div>
-                </li>
-              </ul>
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             </div>
+            <h3>Chairman</h3>
+            <p class="position-org">Internal Audit Standards Board, ICAI</p>
           </div>
 
-          <div
-            class="group bg-midnight border border-white/5 p-8 md:p-10 rounded-2xl hover:border-green-400/30 transition-all duration-300 relative overflow-hidden"
-          >
-            <div
-              class="absolute inset-0 bg-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            ></div>
-            <div class="relative z-10">
-              <div class="flex items-center justify-between mb-8">
-                <div
-                  class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-green-900/20 flex items-center justify-center text-green-400 text-xl md:text-2xl group-hover:bg-green-500 group-hover:text-white transition-colors duration-300"
-                >
-                  <i class="fas fa-gavel"></i>
-                </div>
-                <span
-                  class="px-3 py-1 rounded-full border border-white/10 text-[9px] md:text-[10px] text-slate-400 uppercase tracking-widest group-hover:border-green-400 group-hover:text-green-400 transition-colors"
-                  >Legal & Tax</span
-                >
-              </div>
-
-              <h4 class="text-2xl md:text-3xl font-serif text-white mb-4">
-                Taxation & Litigation
-              </h4>
-              <p class="text-slate-400 mb-8 text-sm leading-relaxed">
-                Providing shield and strategy for complex tax matters. Expert
-                representation before Appellate Tribunals.
-              </p>
-
-              <ul
-                class="space-y-4 text-sm text-slate-300 border-t border-white/10 pt-6"
+          <div class="position-card">
+            <div class="position-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
               >
-                <li class="flex items-start">
-                  <i
-                    class="fas fa-check-circle text-green-400 mt-1 mr-3 flex-shrink-0"
-                  ></i>
-                  <div>
-                    <strong class="text-white block mb-1"
-                      >Appellate Representation</strong
-                    >
-                    <span class="text-slate-500 text-xs"
-                      >ITAT & CIT Appeals.</span
-                    >
-                  </div>
-                </li>
-              </ul>
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             </div>
+            <h3>Vice Chairman</h3>
+            <p class="position-org">
+              Auditing & Assurance Standards Board, ICAI
+            </p>
           </div>
 
-          <div
-            class="group bg-midnight border border-white/5 p-8 md:p-10 rounded-2xl hover:border-purple-400/30 transition-all duration-300 relative overflow-hidden"
-          >
-            <div
-              class="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            ></div>
-            <div class="relative z-10">
-              <div class="flex items-center justify-between mb-8">
-                <div
-                  class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-purple-900/20 flex items-center justify-center text-purple-400 text-xl md:text-2xl group-hover:bg-purple-500 group-hover:text-white transition-colors duration-300"
-                >
-                  <i class="fas fa-chess-knight"></i>
-                </div>
-                <span
-                  class="px-3 py-1 rounded-full border border-white/10 text-[9px] md:text-[10px] text-slate-400 uppercase tracking-widest group-hover:border-purple-400 group-hover:text-purple-400 transition-colors"
-                  >Strategic Growth</span
-                >
-              </div>
-
-              <h4 class="text-2xl md:text-3xl font-serif text-white mb-4">
-                Advisory & Consultancy
-              </h4>
-              <p class="text-slate-400 mb-8 text-sm leading-relaxed">
-                Beyond the balance sheet, we act as growth partners for
-                corporates, offering due diligence and financial structuring.
-              </p>
-
-              <ul
-                class="space-y-4 text-sm text-slate-300 border-t border-white/10 pt-6"
+          <div class="position-card">
+            <div class="position-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
               >
-                <li class="flex items-start">
-                  <i
-                    class="fas fa-check-circle text-purple-400 mt-1 mr-3 flex-shrink-0"
-                  ></i>
-                  <div>
-                    <strong class="text-white block mb-1"
-                      >Project Financing</strong
-                    >
-                    <span class="text-slate-500 text-xs"
-                      >Debt Syndication.</span
-                    >
-                  </div>
-                </li>
-              </ul>
+                <path
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
             </div>
+            <h3>Convenor</h3>
+            <p class="position-org">Estate Development Directorate, ICAI</p>
+          </div>
+
+          <div class="position-card">
+            <div class="position-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                />
+              </svg>
+            </div>
+            <h3>Deputy Convenor</h3>
+            <p class="position-org">
+              Region & Branch Affairs Directorate, ICAI
+            </p>
+          </div>
+
+          <div class="position-card">
+            <div class="position-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h3>Independent Director</h3>
+            <p class="position-org">Om Freight Forwarders Limited</p>
+          </div>
+
+          <div class="position-card">
+            <div class="position-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+            </div>
+            <h3>Trustee & Managing Committee Member</h3>
+            <p class="position-org">
+              Hindustan Medical Institution (Birla Group)
+            </p>
+          </div>
+
+          <div class="position-card">
+            <div class="position-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                />
+              </svg>
+            </div>
+            <h3>President</h3>
+            <p class="position-org">
+              Government Boys Higher Secondary School (Est. 1863)
+            </p>
+          </div>
+
+          <div class="position-card">
+            <div class="position-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                />
+              </svg>
+            </div>
+            <h3>Member</h3>
+            <p class="position-org">
+              Regional Advisory Committee of Direct Tax, Calcutta
+            </p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div
-          class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-16"
-        >
-          <div class="text-center group">
-            <div
-              class="text-3xl md:text-5xl font-serif text-white mb-2 group-hover:text-gold transition-colors"
-            >
-              25<span class="text-gold">+</span>
-            </div>
-            <div class="text-[10px] uppercase tracking-[0.2em] text-slate-500">
-              Years Experience
-            </div>
-          </div>
-          <div class="text-center group">
-            <div
-              class="text-3xl md:text-5xl font-serif text-white mb-2 group-hover:text-gold transition-colors"
-            >
-              500<span class="text-gold">+</span>
-            </div>
-            <div class="text-[10px] uppercase tracking-[0.2em] text-slate-500">
-              Branches Audited
+    <!-- Professional Journey -->
+    <section class="journey">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Career Milestones</span>
+          <h2 class="section-title">Professional Journey</h2>
+        </div>
+
+        <div class="journey-timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Chairman, EIRC of ICAI</h3>
+              <p class="timeline-year">2022-23</p>
+              <p>
+                Led the Eastern India Regional Council, achieving unprecedented
+                national recognition with 2 National Awards for the Guwahati
+                Branch
+              </p>
             </div>
           </div>
-          <div class="text-center group">
-            <div
-              class="text-3xl md:text-5xl font-serif text-white mb-2 group-hover:text-gold transition-colors"
-            >
-              50<span class="text-gold">+</span>
-            </div>
-            <div class="text-[10px] uppercase tracking-[0.2em] text-slate-500">
-              PSU Assignments
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Chairman, Batgach</h3>
+              <p class="timeline-year">2015-17</p>
+              <p>
+                Headed the largest CA Network in India, fostering collaboration
+                and knowledge sharing
+              </p>
             </div>
           </div>
-          <div class="text-center group">
-            <div
-              class="text-3xl md:text-5xl font-serif text-white mb-2 group-hover:text-gold transition-colors"
-            >
-              100<span class="text-gold">%</span>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>President, Calcutta Chapter</h3>
+              <p class="timeline-year">2019-20</p>
+              <p>
+                Institute of Internal Auditors - Leading internal audit
+                professionals
+              </p>
             </div>
-            <div class="text-[10px] uppercase tracking-[0.2em] text-slate-500">
-              Compliance Rate
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Chairman, Guwahati Branch ICAI</h3>
+              <p class="timeline-year">2008-09</p>
+              <p>
+                First person from outside branch headquarter city to be
+                Chairman, setting new benchmarks in leadership
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <h3>Chairman, Assam State Council of FICCI</h3>
+              <p class="timeline-year">Past Position</p>
+              <p>
+                Member of National Council of FICCI, representing industrial
+                interests
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="firm" class="py-20 md:py-32 bg-midnight relative">
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-royal to-midnight pointer-events-none"
-      ></div>
-      <div class="container mx-auto px-6 md:px-12 relative z-10">
-        <div class="flex flex-col lg:flex-row gap-16 items-center">
-          <div class="lg:w-1/2 space-y-8">
-            <h2 class="text-4xl md:text-7xl font-serif text-white">
-              RKP <br /><span class="text-gradient-gold">ASSOCIATES</span>
-            </h2>
-            <p
-              class="text-lg md:text-xl text-slate-300 font-light border-l-4 border-gold pl-6"
-            >
-              "Ranked as a Category-I Firm by ICAI & RBI. Recognized as a Major
-              Audit Firm by the C&AG of India."
+    <!-- Firm Overview -->
+    <section class="firm-overview">
+      <div class="container">
+        <div class="firm-grid">
+          <div class="firm-content">
+            <span class="section-label">RKP Associates</span>
+            <h2 class="section-title">Leading CA Firm in Eastern India</h2>
+            <p>
+              RKP Associates stands as one of the largest and most respected
+              Chartered Accountancy firms in Eastern India. With a legacy of
+              excellence and a commitment to professional integrity, the firm
+              has established itself as a trusted partner for businesses across
+              diverse sectors.
             </p>
-            <div class="grid grid-cols-2 gap-6">
-              <div class="bg-white/5 p-6 rounded-lg border border-white/5">
-                <div class="text-3xl md:text-4xl font-serif text-white mb-1">
-                  9+
-                </div>
-                <div
-                  class="text-[10px] md:text-xs text-gold uppercase tracking-widest"
+
+            <div class="firm-highlights">
+              <div class="highlight-item">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
                 >
-                  Cities Across India
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <h4>Category-I Firm</h4>
+                  <p>
+                    Categorized by ICAI & RBI since inception - first in North
+                    East
+                  </p>
                 </div>
               </div>
-              <div class="bg-white/5 p-6 rounded-lg border border-white/5">
-                <div class="text-3xl md:text-4xl font-serif text-white mb-1">
-                  150+
-                </div>
-                <div
-                  class="text-[10px] md:text-xs text-gold uppercase tracking-widest"
+
+              <div class="highlight-item">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
                 >
-                  Workforce
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <h4>Major Audit Firm</h4>
+                  <p>
+                    Recognized by C&AG India for Central Statutory Audit of PSU
+                    Banks
+                  </p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <h4>Pan-Eastern Presence</h4>
+                  <p>
+                    9 offices across Kolkata, Guwahati, Bhubaneshwar, Patna,
+                    Siliguri, Silchar, Cuttack, Ranchi & Kharsia
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="flex gap-4">
+
+            <div class="team-composition">
+              <h3>Team Strength: 152 Professionals</h3>
+              <div class="team-stats">
+                <div class="team-stat">
+                  <span class="stat-number">20</span>
+                  <span class="stat-label">Partners</span>
+                </div>
+                <div class="team-stat">
+                  <span class="stat-number">6</span>
+                  <span class="stat-label">Qualified Assistants</span>
+                </div>
+                <div class="team-stat">
+                  <span class="stat-number">8</span>
+                  <span class="stat-label">Expert Articles</span>
+                </div>
+                <div class="team-stat">
+                  <span class="stat-number">27</span>
+                  <span class="stat-label">Articled Assistants</span>
+                </div>
+                <div class="team-stat">
+                  <span class="stat-number">76</span>
+                  <span class="stat-label">Audit Staff</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="firm-images">
+            <div class="image-collage">
+              <img
+                src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_1_54_58_PM.jpeg"
+                alt="Professional Event"
+                class="collage-img img-1"
+              />
+              <img
+                src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_1_54_35_PM.jpeg"
+                alt="Speaking Engagement"
+                class="collage-img img-2"
+              />
+              <img
+                src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_1_52_24_PM.jpeg"
+                alt="Leadership Event"
+                class="collage-img img-3"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Exposure -->
+    <section class="exposure">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Expertise Across Sectors</span>
+          <h2 class="section-title">Professional Exposure</h2>
+          <p class="section-description">
+            Comprehensive experience across diverse industry verticals
+          </p>
+        </div>
+
+        <div class="exposure-grid">
+          <div class="exposure-card">
+            <div class="exposure-icon">⚡</div>
+            <h3>Petroleum & Petrochemical</h3>
+            <p>
+              Statutory Audit and Quarterly Reviews of Maharatna Companies and
+              PSU Refineries with turnover exceeding ₹30,000 Crore
+            </p>
+          </div>
+
+          <div class="exposure-card">
+            <div class="exposure-icon">🏦</div>
+            <h3>Banking Sector</h3>
+            <p>
+              Central Statutory Audit of Co-operative Banks, Branch Audits,
+              Concurrent Audits, and Stock & Receivable Audits of Nationalised
+              Banks
+            </p>
+          </div>
+
+          <div class="exposure-card">
+            <div class="exposure-icon">🔌</div>
+            <h3>Power Sector</h3>
+            <p>
+              Statutory and Internal Audits of Power Distribution and Power Grid
+              Companies
+            </p>
+          </div>
+
+          <div class="exposure-card">
+            <div class="exposure-icon">🏥</div>
+            <h3>Healthcare</h3>
+            <p>
+              Multi-specialty Hospitals, Government Health Schemes, and World
+              Bank Aided Projects
+            </p>
+          </div>
+
+          <div class="exposure-card">
+            <div class="exposure-icon">🎓</div>
+            <h3>Education</h3>
+            <p>
+              Statutory and Concurrent Audits of Government Schemes under
+              Ministry of Education
+            </p>
+          </div>
+
+          <div class="exposure-card">
+            <div class="exposure-icon">🛡️</div>
+            <h3>Insurance</h3>
+            <p>
+              Divisional Statutory Audits of all four PSU Insurance Companies
+              and Life Insurance Corporation
+            </p>
+          </div>
+
+          <div class="exposure-card">
+            <div class="exposure-icon">📡</div>
+            <h3>Telecommunications</h3>
+            <p>
+              Internal Audit of Central PSU under Ministry of Communications
+            </p>
+          </div>
+
+          <div class="exposure-card">
+            <div class="exposure-icon">🏗️</div>
+            <h3>Construction & Real Estate</h3>
+            <p>
+              Statutory Audits of construction companies and real estate
+              ventures
+            </p>
+          </div>
+
+          <div class="exposure-card">
+            <div class="exposure-icon">⛏️</div>
+            <h3>Mining</h3>
+            <p>Statutory Audit in Multinational Corporations</p>
+          </div>
+
+          <div class="exposure-card">
+            <div class="exposure-icon">💼</div>
+            <h3>Consultancy Services</h3>
+            <p>
+              Taxation, Corporate Laws, Management, Business Continuity
+              Planning, and Project Financing for SMEs
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Highlight -->
+    <section class="achievements-highlight">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Recognition & Excellence</span>
+          <h2 class="section-title">Notable Achievements</h2>
+        </div>
+
+        <div class="achievements-carousel">
+          <div class="achievement-card">
+            <div class="achievement-number">6th</div>
+            <h3>All India Rank</h3>
+            <p>
+              DISA Examination - Diploma in Information System Audit (2nd in
+              Eastern India)
+            </p>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-number">1st</div>
+            <h3>Pioneer Leader</h3>
+            <p>
+              First person from outside branch headquarter city to become
+              Chairman of any ICAI Branch
+            </p>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-number">2</div>
+            <h3>National Awards</h3>
+            <p>
+              First time any Eastern India branch earned National Awards -
+              Guwahati Branch under his chairmanship
+            </p>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-number">✓</div>
+            <h3>Vikash Ratna Gold Award</h3>
+            <p>
+              Nominated by International Integration & Growth Society, New Delhi
+              (2002)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Partner with Excellence?</h2>
+          <p>
+            Let's discuss how RKP Associates can serve your accounting and
+            auditing needs
+          </p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary"
+              >Schedule Consultation</a
+            >
+            <a href="profile.html" class="btn btn-outline-light">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>CA Ravi Kumar Patwa</h3>
+            <p>Managing Partner, RKP Associates<br />Chartered Accountants</p>
+            <div class="social-links">
               <a
-                href="https://rkpassociates.in/"
+                href="https://www.linkedin.com/in/ravi-kumar-patwa-6760015/"
                 target="_blank"
-                class="px-8 py-4 bg-white text-midnight font-bold uppercase tracking-widest text-xs rounded hover:bg-gold transition-colors w-full md:w-auto text-center"
+                aria-label="LinkedIn"
               >
-                Visit Official Site
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/caravipatwa/"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://x.com/ravipatwa"
+                target="_blank"
+                aria-label="Twitter"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/ravipatwa12/"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
               </a>
             </div>
           </div>
 
-          <div class="lg:w-1/2 relative w-full">
-            <div
-              class="bg-royal border border-white/10 p-6 md:p-8 rounded-2xl relative overflow-hidden group"
-            >
-              <div
-                class="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/India_relief_location_map.jpg/240px-India_relief_location_map.jpg')] bg-cover opacity-20 mix-blend-luminosity"
-              ></div>
-              <div
-                class="relative z-10 grid grid-cols-2 gap-y-6 md:gap-y-8 gap-x-4"
-              >
-                <div class="col-span-2 mb-2">
-                  <h3
-                    class="text-white font-serif text-xl border-b border-white/10 pb-2"
-                  >
-                    National Footprint
-                  </h3>
-                </div>
-                <div class="flex items-start">
-                  <i class="fas fa-map-marker-alt text-gold mt-1 mr-3"></i>
-                  <div>
-                    <strong class="text-white block text-sm md:text-base"
-                      >Kolkata (HO)</strong
-                    >
-                    <span class="text-xs text-slate-500">Chinar Park</span>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="fas fa-map-marker-alt text-gold mt-1 mr-3"></i>
-                  <div>
-                    <strong class="text-white block text-sm md:text-base"
-                      >Guwahati</strong
-                    >
-                    <span class="text-xs text-slate-500">Regional Hub</span>
-                  </div>
-                </div>
-                <div class="flex items-start">
-                  <i class="fas fa-map-marker-alt text-slate-600 mt-1 mr-3"></i>
-                  <span class="text-sm text-slate-400">New Delhi</span>
-                </div>
-                <div class="flex items-start">
-                  <i class="fas fa-map-marker-alt text-slate-600 mt-1 mr-3"></i>
-                  <span class="text-sm text-slate-400">Bhubaneswar</span>
-                </div>
-                <div class="flex items-start">
-                  <i class="fas fa-map-marker-alt text-slate-600 mt-1 mr-3"></i>
-                  <span class="text-sm text-slate-400">Patna</span>
-                </div>
-                <div class="flex items-start">
-                  <i class="fas fa-map-marker-alt text-slate-600 mt-1 mr-3"></i>
-                  <span class="text-sm text-slate-400">Siliguri</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="socials"
-      class="py-20 md:py-24 bg-gradient-to-t from-black to-midnight border-t border-white/5"
-    >
-      <div class="container mx-auto px-6 md:px-12">
-        <div class="text-center mb-16">
-          <span class="text-gold text-xs font-bold tracking-[0.3em] uppercase"
-            >Connect Online</span
-          >
-          <h2 class="text-3xl md:text-4xl font-serif text-white mt-3">
-            Digital <span class="italic text-slate-500">Ecosystem</span>
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          <a
-            href="https://rkpassociates.in/ca-ravi-kumar-patwa/"
-            target="_blank"
-            class="social-card group"
-          >
-            <div
-              class="icon-box bg-blue-600/20 text-blue-400 group-hover:bg-blue-600 group-hover:text-white"
-            >
-              <i class="fas fa-globe"></i>
-            </div>
-            <span class="text-white font-serif mt-4 block">Portfolio</span>
-            <span
-              class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider group-hover:text-blue-400 transition-colors"
-              >Official Site</span
-            >
-          </a>
-          <a
-            href="https://www.linkedin.com/in/ravi-kumar-patwa-6760015/"
-            target="_blank"
-            class="social-card group"
-          >
-            <div
-              class="icon-box bg-blue-700/20 text-blue-500 group-hover:bg-blue-700 group-hover:text-white"
-            >
-              <i class="fab fa-linkedin-in"></i>
-            </div>
-            <span class="text-white font-serif mt-4 block">LinkedIn</span>
-            <span
-              class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider group-hover:text-blue-500 transition-colors"
-              >Network</span
-            >
-          </a>
-
-          <a
-            href="https://x.com/ravipatwa"
-            target="_blank"
-            class="social-card group"
-          >
-            <div
-              class="icon-box bg-white/10 text-white group-hover:bg-white group-hover:text-black"
-            >
-              <i class="fab fa-x-twitter"></i>
-            </div>
-            <span class="text-white font-serif mt-4 block">X.com</span>
-            <span
-              class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider group-hover:text-white transition-colors"
-              >Updates</span
-            >
-          </a>
-
-          <a
-            href="https://www.instagram.com/ravipatwa12/"
-            target="_blank"
-            class="social-card group"
-          >
-            <div
-              class="icon-box bg-pink-600/20 text-pink-500 group-hover:bg-gradient-to-tr group-hover:from-yellow-400 group-hover:via-red-500 group-hover:to-purple-500 group-hover:text-white"
-            >
-              <i class="fab fa-instagram"></i>
-            </div>
-            <span class="text-white font-serif mt-4 block">Instagram</span>
-            <span
-              class="text-[10px] md:text-xs text-slate-500 uppercase tracking-wider group-hover:text-pink-500 transition-colors"
-              >Gallery</span
-            >
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <footer
-      class="bg-black pt-20 pb-10 border-t border-white/10 relative overflow-hidden"
-    >
-      <div
-        class="absolute bottom-0 left-1/2 -translate-x-1/2 text-[18vw] font-serif font-bold text-white/[0.03] leading-none pointer-events-none select-none"
-      >
-        PATWA
-      </div>
-
-      <div class="container mx-auto px-6 relative z-10">
-        <div
-          class="flex flex-col md:flex-row justify-between items-start gap-12 mb-20"
-        >
-          <div>
-            <h3 class="text-2xl font-serif text-white mb-6">
-              Contact Information
-            </h3>
-            <div class="space-y-4">
-              <a
-                href="mailto:ravipatwa@hotmail.com"
-                class="block text-xl md:text-3xl text-slate-400 hover:text-gold transition-colors font-serif break-all"
-                >ravipatwa@hotmail.com</a
-              >
-              <p class="text-xl md:text-2xl text-white">+91 94350 71192</p>
-            </div>
-            <div class="mt-8 flex items-start gap-4">
-              <i class="fas fa-map-marker-alt text-gold mt-1"></i>
-              <p class="text-slate-500 max-w-xs text-sm">
-                4M, New Town Square, Chinar Park,<br />
-                Kolkata - 700136, West Bengal
-              </p>
-            </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="profile.html">Profile</a></li>
+              <li><a href="media.html">Media & Resources</a></li>
+              <li><a href="contributions.html">Contributions</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
           </div>
 
-          <div
-            class="flex flex-col gap-4 items-start md:items-end w-full md:w-auto"
-          >
-            <a
-              href="mailto:ravipatwa@hotmail.com"
-              class="w-full md:w-auto px-10 py-4 bg-gold text-midnight font-bold tracking-widest uppercase text-xs rounded hover:bg-white transition-colors text-center"
-            >
-              Send Email
-            </a>
+          <div class="footer-col">
+            <h4>RKP Associates</h4>
+            <ul>
+              <li>
+                <a href="https://rkpassociates.in/" target="_blank"
+                  >Firm Website</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://rkpassociates.in/ca-ravi-kumar-patwa/"
+                  target="_blank"
+                  >About CA Ravi Patwa</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <p>
+              4M, New Town Square, Chinar Park<br />
+              Rajarhat, Kolkata - 700136
+            </p>
+            <p>
+              Phone: +91 94350 71192<br />
+              Email: ravipatwa@hotmail.com
+            </p>
           </div>
         </div>
 
-        <div
-          class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-600 uppercase tracking-widest gap-4 md:gap-0"
-        >
-          <p class="text-center md:text-left">
-            &copy; 2025 CA Ravi Kumar Patwa. All Rights Reserved.
-          </p>
-          <div class="mt-0">
-            <a href="#" class="hover:text-white transition-colors"
-              >Back to Top</a
-            >
-          </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 CA Ravi Kumar Patwa. All rights reserved.</p>
         </div>
       </div>
     </footer>
