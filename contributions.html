@@ -1,128 +1,1016 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contributions - CA Ravi Kumar Patwa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Instrument+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .contributions-hero {
+        padding: 120px 0 80px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .contributions-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+      }
+      .contributions-hero .section-label {
+        color: var(--accent-light);
+      }
+      .contributions-hero .section-title {
+        color: white;
+        font-size: 3.5rem;
+      }
+      .contributions-hero .section-description {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.25rem;
+      }
+
+      /* Stats Cards */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .stat-card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        padding: 32px;
+        border-radius: 16px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: var(--transition);
+      }
+      .stat-card:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-8px);
+      }
+      .stat-icon {
+        font-size: 3rem;
+        margin-bottom: 16px;
+      }
+      .stat-number {
+        font-family: var(--font-heading);
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 8px;
+      }
+      .stat-label {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.0625rem;
+      }
+
+      /* Category Cards */
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 32px;
+      }
+      .category-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        transition: var(--transition);
+      }
+      .category-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+      .category-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        padding: 32px;
+        position: relative;
+        overflow: hidden;
+      }
+      .category-header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+      }
+      .category-icon {
+        font-size: 3.5rem;
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 1;
+      }
+      .category-header h3 {
+        color: white;
+        font-size: 1.75rem;
+        margin-bottom: 8px;
+        position: relative;
+        z-index: 1;
+      }
+      .category-subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.0625rem;
+        position: relative;
+        z-index: 1;
+      }
+      .category-body {
+        padding: 32px;
+      }
+      .contribution-item {
+        padding: 20px;
+        margin-bottom: 16px;
+        background: var(--bg-secondary);
+        border-radius: 12px;
+        border-left: 4px solid var(--accent);
+        transition: var(--transition);
+        position: relative;
+      }
+      .contribution-item:hover {
+        background: var(--bg-tertiary);
+        transform: translateX(8px);
+        border-left-width: 6px;
+      }
+      .contribution-item::before {
+        content: "✓";
+        position: absolute;
+        left: -2px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 28px;
+        height: 28px;
+        background: var(--accent);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 0.875rem;
+        box-shadow: 0 2px 8px rgba(212, 165, 116, 0.4);
+      }
+      .contribution-item p {
+        color: var(--text-secondary);
+        line-height: 1.7;
+        font-size: 1.0625rem;
+        padding-left: 36px;
+        margin: 0;
+      }
+      .contribution-item strong {
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      /* Impact Section */
+      .impact-section {
+        background: linear-gradient(
+          135deg,
+          var(--accent-light) 0%,
+          var(--accent) 100%
+        );
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .impact-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.08"%3E%3Cpath d="M0 0h40v40H0V0zm40 40h40v40H40V40z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+      }
+      .impact-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+      }
+      .impact-content h2 {
+        color: rgb(0, 0, 0);
+        font-size: 2.75rem;
+        margin-bottom: 24px;
+      }
+      .impact-content p {
+        color: rgba(0, 0, 0, 0.95);
+        font-size: 1.25rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto 48px;
+      }
+      .impact-numbers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 32px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .impact-number-card {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 32px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .impact-number {
+        font-family: var(--font-heading);
+        font-size: 3rem;
+        font-weight: 700;
+        color: rgb(0, 0, 0);
+        margin-bottom: 8px;
+      }
+      .impact-label {
+        color: rgba(0, 0, 0, 0.95);
+        font-size: 1.0625rem;
+      }
+
+      /* Timeline - Redesigned */
+      .timeline-section {
+        position: relative;
+        padding: 80px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(
+          to bottom,
+          var(--accent) 0%,
+          var(--accent-light) 50%,
+          var(--accent) 100%
+        );
+        transform: translateX(-50%);
+        box-shadow: 0 0 20px rgba(212, 165, 116, 0.3);
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 100px;
+        display: flex;
+        align-items: center;
+      }
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Left side items */
+      .timeline-item.left {
+        justify-content: flex-start;
+      }
+      .timeline-item.left .timeline-content {
+        margin-right: calc(50% + 60px);
+        text-align: right;
+      }
+      .timeline-item.left .timeline-content::after {
+        content: "";
+        position: absolute;
+        right: -50px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 4px;
+        background: var(--accent);
+      }
+
+      /* Right side items */
+      .timeline-item.right {
+        justify-content: flex-end;
+      }
+      .timeline-item.right .timeline-content {
+        margin-left: calc(50% + 60px);
+        text-align: left;
+      }
+      .timeline-item.right .timeline-content::after {
+        content: "";
+        position: absolute;
+        left: -50px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 4px;
+        background: var(--accent);
+      }
+
+      .timeline-content {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        position: relative;
+        width: 100%;
+        max-width: 520px;
+        transition: var(--transition);
+        border: 2px solid transparent;
+      }
+      .timeline-content:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+        border-color: var(--accent-light);
+      }
+
+      .timeline-year {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--accent) 0%,
+          var(--accent-dark) 100%
+        );
+        color: white;
+        padding: 10px 24px;
+        border-radius: 25px;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(212, 165, 116, 0.4);
+        letter-spacing: 0.5px;
+      }
+      .timeline-content h3 {
+        color: var(--primary);
+        font-size: 1.625rem;
+        margin-bottom: 16px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      .timeline-content p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        font-size: 1.0625rem;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 32px;
+        height: 32px;
+        background: white;
+        border: 5px solid var(--accent);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 12px rgba(212, 165, 116, 0.15),
+          0 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+        transition: var(--transition);
+      }
+      .timeline-item:hover .timeline-dot {
+        transform: translate(-50%, -50%) scale(1.2);
+        box-shadow:
+          0 0 0 16px rgba(212, 165, 116, 0.25),
+          0 6px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Decorative elements */
+      .timeline-item.left .timeline-content::before {
+        content: "";
+        position: absolute;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 0 15px 20px;
+        border-color: transparent transparent transparent white;
+        filter: drop-shadow(2px 0 4px rgba(0, 0, 0, 0.1));
+      }
+      .timeline-item.right .timeline-content::before {
+        content: "";
+        position: absolute;
+        left: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 20px 15px 0;
+        border-color: transparent white transparent transparent;
+        filter: drop-shadow(-2px 0 4px rgba(0, 0, 0, 0.1));
+      }
+
+      /* Responsive Timeline */
+      @media (max-width: 968px) {
+        .timeline-line {
+          left: 40px;
+        }
+        .timeline-item.left,
+        .timeline-item.right {
+          justify-content: flex-start;
+        }
+        .timeline-item.left .timeline-content,
+        .timeline-item.right .timeline-content {
+          margin: 0 0 0 100px;
+          text-align: left;
+          max-width: 100%;
+        }
+        .timeline-item.left .timeline-content::after,
+        .timeline-item.right .timeline-content::after {
+          left: -50px;
+          right: auto;
+        }
+        .timeline-item.left .timeline-content::before {
+          left: -20px;
+          right: auto;
+          border-width: 15px 20px 15px 0;
+          border-color: transparent white transparent transparent;
+        }
+        .timeline-item.right .timeline-content::before {
+          left: -20px;
+        }
+        .timeline-dot {
+          left: 40px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .timeline-line {
+          left: 20px;
+        }
+        .timeline-dot {
+          left: 20px;
+          width: 24px;
+          height: 24px;
+          border-width: 4px;
+        }
+        .timeline-item.left .timeline-content,
+        .timeline-item.right .timeline-content {
+          margin-left: 60px;
+          padding: 28px 24px;
+        }
+        .timeline-content h3 {
+          font-size: 1.375rem;
+        }
+        .timeline-year {
+          font-size: 0.875rem;
+          padding: 8px 18px;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 968px) {
+        .contributions-hero .section-title {
+          font-size: 2.5rem;
+        }
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .category-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand"><span class="brand-name">CA RAVI KUMAR PATWA</span></div>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="profile.html" class="nav-link">Profile</a>
-                <a href="media.html" class="nav-link">Media & Resources</a>
-                <a href="contributions.html" class="nav-link active">Contributions</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+      <div class="container">
+        <div class="nav-brand">
+          <span class="brand-name">CA RAVI KUMAR PATWA</span>
         </div>
+        <div class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="profile.html" class="nav-link">Profile</a>
+          <a href="media.html" class="nav-link">Media & Resources</a>
+          <a href="contributions.html" class="nav-link active">Contributions</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
     </nav>
 
-    <section style="padding: 120px 0 80px; background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);">
-        <div class="container">
-            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-                <span class="section-label">Giving Back</span>
-                <h1 class="section-title">Contributions to Profession & Society</h1>
-                <p class="section-description">Dedicated to advancing the accounting profession and contributing to social welfare through education, training, and community service</p>
+    <section class="contributions-hero">
+      <div class="container" style="position: relative; z-index: 1">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center">
+          <span class="section-label">Giving Back to the Profession</span>
+          <h1 class="section-title">Contributions to Profession & Society</h1>
+          <p class="section-description">
+            Dedicated to advancing the accounting profession and contributing to
+            social welfare through education, training, and community service
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">🎓</div>
+              <div class="stat-number">1000+</div>
+              <div class="stat-label">Professionals Trained</div>
             </div>
+            <div class="stat-card">
+              <div class="stat-icon">🎤</div>
+              <div class="stat-number">100+</div>
+              <div class="stat-label">Speaking Engagements</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🌏</div>
+              <div class="stat-number">2</div>
+              <div class="stat-label">International Summits</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">📚</div>
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Universities Addressed</div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section style="padding: 96px 0; background: white;">
-        <div class="container">
-            <div style="max-width: 900px; margin: 0 auto;">
-                <h2 style="color: var(--primary); margin-bottom: 32px;">Professional Training & Development</h2>
-                <div style="background: var(--bg-secondary); padding: 32px; border-radius: 12px; margin-bottom: 48px;">
-                    <h3 style="color: var(--primary); margin-bottom: 20px;">Training Programs Conducted</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Training sessions for Controller & Auditor General of India officials</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Capacity building for PSU Managing Directors and Directors</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Training for General Managers of Public Sector Undertakings</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Professional development programs for Financial Institutions like NEDFI</li>
-                        <li style="padding: 12px 0;">✓ Training for Industrial Units including BRPL</li>
-                    </ul>
-                </div>
-
-                <h2 style="color: var(--primary); margin-bottom: 32px;">Speaking Engagements</h2>
-                <div style="background: var(--bg-secondary); padding: 32px; border-radius: 12px; margin-bottom: 48px;">
-                    <h3 style="color: var(--primary); margin-bottom: 20px;">Conferences & Seminars</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Speaker at International Conferences for Chartered Accountants</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ National Conference presentations across India</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Regional Conference speaker for CA professionals</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Workshops for Cost Accountants and Company Secretaries</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Seminars for Tax Professionals</li>
-                        <li style="padding: 12px 0;">✓ Guest lectures for CA Students preparation programs</li>
-                    </ul>
-                </div>
-
-                <h2 style="color: var(--primary); margin-bottom: 32px;">Academic Contributions</h2>
-                <div style="background: var(--bg-secondary); padding: 32px; border-radius: 12px; margin-bottom: 48px;">
-                    <h3 style="color: var(--primary); margin-bottom: 20px;">Educational Institutions</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Lectures in Universities on accounting and economics</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Guest faculty at Colleges for commerce students</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Career guidance sessions at Educational Institutions</li>
-                        <li style="padding: 12px 0;">✓ Academic counseling on related professional matters</li>
-                    </ul>
-                </div>
-
-                <h2 style="color: var(--primary); margin-bottom: 32px;">International Representation</h2>
-                <div style="background: var(--bg-secondary); padding: 32px; border-radius: 12px; margin-bottom: 48px;">
-                    <h3 style="color: var(--primary); margin-bottom: 20px;">Trade & Business Summits</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Represented India at Indo-Bangladesh Trade Summit (First Edition)</li>
-                        <li style="padding: 12px 0;">✓ Represented India at Indo-Bangladesh Trade Summit (Second Edition)</li>
-                    </ul>
-                </div>
-
-                <h2 style="color: var(--primary); margin-bottom: 32px;">Social & Community Service</h2>
-                <div style="background: var(--bg-secondary); padding: 32px; border-radius: 12px;">
-                    <h3 style="color: var(--primary); margin-bottom: 20px;">Social Welfare Activities</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Actively involved in various social welfare initiatives</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Member of Governing Bodies of Educational Institutions</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ President of Government Boys Higher Secondary School (Est. 1863)</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Trustee & Managing Committee Member, Hindustan Medical Institution (Birla Group)</li>
-                        <li style="padding: 12px 0; border-bottom: 1px solid var(--border);">✓ Member of Airport Advisory Committee (Silchar, Assam)</li>
-                        <li style="padding: 12px 0;">✓ Leadership roles in Social Service Organizations</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Professional Training -->
+    <section style="padding: 96px 0; background: white">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 64px">
+          <h2
+            style="
+              color: var(--primary);
+              font-size: 2.75rem;
+              margin-bottom: 16px;
+            "
+          >
+            Professional Training & Development
+          </h2>
+          <p
+            style="
+              color: var(--text-light);
+              font-size: 1.125rem;
+              max-width: 700px;
+              margin: 0 auto;
+            "
+          >
+            Empowering professionals with knowledge, skills, and best practices
+          </p>
         </div>
+
+        <div class="category-grid">
+          <div class="category-card">
+            <div class="category-header">
+              <div class="category-icon">🏛️</div>
+              <h3>Government & PSU Training</h3>
+              <p class="category-subtitle">Building institutional capacity</p>
+            </div>
+            <div class="category-body">
+              <div class="contribution-item">
+                <p>
+                  <strong>CAG Officials Training:</strong> Conducted specialized
+                  training sessions for officials of Controller & Auditor
+                  General of India
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>PSU Leadership Development:</strong> Trained Managing
+                  Directors, Directors & General Managers of Public Sector
+                  Undertakings
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>BRPL Professional Training:</strong> Comprehensive
+                  capacity building programs for industrial units
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>NEDFI Financial Training:</strong> Specialized
+                  programs for Financial Institutions on audit and compliance
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="category-header">
+              <div class="category-icon">🎤</div>
+              <h3>Speaking & Conferences</h3>
+              <p class="category-subtitle">Sharing knowledge globally</p>
+            </div>
+            <div class="category-body">
+              <div class="contribution-item">
+                <p>
+                  <strong>International Conferences:</strong> Speaker at
+                  international CA conferences across multiple countries
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>National Seminars:</strong> Regular keynote speaker at
+                  national conferences throughout India
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Regional Workshops:</strong> Conducted workshops for
+                  CA professionals in Eastern India
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Professional Development:</strong> Seminars for Cost
+                  Accountants, Company Secretaries & Tax Professionals
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Student Guidance:</strong> Guest lectures for CA
+                  students on exam preparation and career development
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+      <div class="container">
+        <div class="impact-content">
+          <h2>Creating Lasting Impact</h2>
+          <p>
+            Through dedication to professional excellence and social
+            responsibility, making meaningful contributions to the accounting
+            profession and society at large
+          </p>
+
+          <div class="impact-numbers">
+            <div class="impact-number-card">
+              <div class="impact-number">15+</div>
+              <div class="impact-label">Years of Service</div>
+            </div>
+            <div class="impact-number-card">
+              <div class="impact-number">23+</div>
+              <div class="impact-label">ICAI Committees</div>
+            </div>
+            <div class="impact-number-card">
+              <div class="impact-number">5</div>
+              <div class="impact-label">Educational Institutions</div>
+            </div>
+            <div class="impact-number-card">
+              <div class="impact-number">3</div>
+              <div class="impact-label">Social Organizations</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academic & International -->
+    <section style="padding: 96px 0; background: var(--bg-secondary)">
+      <div class="container">
+        <div class="category-grid">
+          <div class="category-card">
+            <div class="category-header">
+              <div class="category-icon">🎓</div>
+              <h3>Academic Contributions</h3>
+              <p class="category-subtitle">Nurturing future professionals</p>
+            </div>
+            <div class="category-body">
+              <div class="contribution-item">
+                <p>
+                  <strong>University Lectures:</strong> Delivered lectures on
+                  accounting and economics at leading universities
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>College Programs:</strong> Guest faculty for commerce
+                  students across educational institutions
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Career Guidance:</strong> Mentoring sessions for
+                  students on professional development
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Academic Counseling:</strong> Providing guidance on
+                  accounting profession and opportunities
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="category-header">
+              <div class="category-icon">🌏</div>
+              <h3>International Representation</h3>
+              <p class="category-subtitle">India's voice in global forums</p>
+            </div>
+            <div class="category-body">
+              <div class="contribution-item">
+                <p>
+                  <strong>Indo-Bangladesh Summit (First Edition):</strong>
+                  Represented India at the inaugural trade summit
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Indo-Bangladesh Summit (Second Edition):</strong>
+                  Continued representation fostering bilateral trade relations
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Trade Facilitation:</strong> Promoted cross-border
+                  business opportunities and collaboration
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>International Networking:</strong> Building bridges
+                  between Indian and international accounting professionals
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Service -->
+    <section style="padding: 96px 0; background: white">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 64px">
+          <h2
+            style="
+              color: var(--primary);
+              font-size: 2.75rem;
+              margin-bottom: 16px;
+            "
+          >
+            Social & Community Service
+          </h2>
+          <p
+            style="
+              color: var(--text-light);
+              font-size: 1.125rem;
+              max-width: 700px;
+              margin: 0 auto;
+            "
+          >
+            Committed to social welfare and community development
+          </p>
+        </div>
+
+        <div class="category-grid">
+          <div class="category-card">
+            <div class="category-header">
+              <div class="category-icon">🏫</div>
+              <h3>Educational Leadership</h3>
+              <p class="category-subtitle">Shaping the future of education</p>
+            </div>
+            <div class="category-body">
+              <div class="contribution-item">
+                <p>
+                  <strong>School President:</strong> President of Government
+                  Boys Higher Secondary School, an institution established in
+                  1863
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Governing Body Member:</strong> Active participation
+                  in educational policy and administration
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Educational Development:</strong> Working towards
+                  improving infrastructure and academic standards
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Student Welfare:</strong> Initiatives for student
+                  development and career guidance
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-card">
+            <div class="category-header">
+              <div class="category-icon">🏥</div>
+              <h3>Healthcare & Social Welfare</h3>
+              <p class="category-subtitle">Serving the community</p>
+            </div>
+            <div class="category-body">
+              <div class="contribution-item">
+                <p>
+                  <strong>Hindustan Medical Institution:</strong> Trustee &
+                  Managing Committee Member of Birla Group's healthcare
+                  initiative
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Airport Advisory Committee:</strong> Member of Airport
+                  Advisory Committee, Silchar, Assam
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Social Welfare Activities:</strong> Actively involved
+                  in various community development programs
+                </p>
+              </div>
+              <div class="contribution-item">
+                <p>
+                  <strong>Organizational Leadership:</strong> Held leadership
+                  positions in multiple social service organizations
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section style="padding: 96px 0; background: var(--bg-secondary)">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 80px">
+          <h2
+            style="
+              color: var(--primary);
+              font-size: 2.75rem;
+              margin-bottom: 16px;
+            "
+          >
+            Journey of Service
+          </h2>
+          <p style="color: var(--text-light); font-size: 1.125rem">
+            Key milestones in professional and social contributions
+          </p>
+        </div>
+
+        <div class="timeline-section">
+          <div class="timeline-line"></div>
+
+          <!-- 2002 - Left -->
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <span class="timeline-year">2002</span>
+              <h3>Vikash Ratna Gold Award Nomination</h3>
+              <p>
+                Nominated by International Integration & Growth Society, New
+                Delhi for outstanding contributions to the profession
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+
+          <!-- 2008-09 - Right -->
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <span class="timeline-year">2008-09</span>
+              <h3>Chairman, Guwahati Branch ICAI</h3>
+              <p>
+                First person from outside branch headquarter city to lead any
+                ICAI Branch, setting new benchmarks in leadership
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+
+          <!-- 2015-17 - Left -->
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <span class="timeline-year">2015-17</span>
+              <h3>Chairman, Batgach Network</h3>
+              <p>
+                Led the largest CA Network in India, fostering professional
+                collaboration and knowledge sharing across the country
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+
+          <!-- 2019-20 - Right -->
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <span class="timeline-year">2019-20</span>
+              <h3>President, Calcutta Chapter - IIA</h3>
+              <p>
+                Institute of Internal Auditors, advancing internal audit
+                profession and setting new standards for excellence
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+
+          <!-- 2022-23 - Left -->
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <span class="timeline-year">2022-23</span>
+              <h3>Chairman, EIRC of ICAI</h3>
+              <p>
+                Achieved unprecedented 2 National Awards for Guwahati Branch -
+                first time for any Eastern India branch
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+
+          <!-- 2025-29 - Right -->
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <span class="timeline-year">2025-29</span>
+              <h3>Central Council Member, ICAI</h3>
+              <p>
+                Elected to serve the profession at the highest level, shaping
+                standards, policies, and the future of the accounting profession
+                in India
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Join the Journey of Excellence</h2>
+          <p>
+            Let's work together to advance the accounting profession and create
+            positive social impact
+          </p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+            <a href="profile.html" class="btn btn-outline-light">Learn More</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>CA Ravi Kumar Patwa</h3>
-                    <p>Managing Partner, RKP Associates<br>Chartered Accountants</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="contributions.html">Contributions</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>4M, New Town Square, Chinar Park<br>Rajarhat, Kolkata - 700136</p>
-                    <p>Phone: +91 94350 71192<br>Email: ravipatwa@hotmail.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 CA Ravi Kumar Patwa. All rights reserved.</p>
-            </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>CA Ravi Kumar Patwa</h3>
+            <p>Managing Partner, RKP Associates<br />Chartered Accountants</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="profile.html">Profile</a></li>
+              <li><a href="contributions.html">Contributions</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <p>
+              4M, New Town Square, Chinar Park<br />Rajarhat, Kolkata - 700136
+            </p>
+            <p>
+              Phone: +91 94350 71192<br />Email:
+              <a
+                href="/cdn-cgi/l/email-protection"
+                class="__cf_email__"
+                data-cfemail="770516011e0716030016371f18031a161e1b5914181a"
+                >[email&#160;protected]</a
+              >
+            </p>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 CA Ravi Kumar Patwa. All</p>
+        </div>
+      </div>
     </footer>
-    <script src="script.js"></script>
-</body>
+  </body>
 </html>
