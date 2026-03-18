@@ -1327,49 +1327,62 @@
 
     <script src="script.js"></script>
     <script>
-              // Image Slider
-              let currentSlide = 0;
-              const slides = document.querySelectorAll('.slide');
-              const totalSlides = slides.length;
-              const dotsContainer = document.getElementById('sliderDots');
+      // Image Slider
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+      const totalSlides = slides.length;
+      const dotsContainer = document.getElementById("sliderDots");
 
-              for (let i = 0; i < totalSlides; i++) {
-                  const dot = document.createElement('div');
-                  dot.className = 'dot';
-                  if (i === 0) dot.classList.add('active');
-                  dot.onclick = () => goToSlide(i);
-                  dotsContainer.appendChild(dot);
-              }
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("div");
+        dot.className = "dot";
+        if (i === 0) dot.classList.add("active");
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+      }
 
-              function updateSlider() {
-                  document.getElementById('sliderWrapper').style.transform = `translateX(-${currentSlide * 100}%)`;
-                  document.querySelectorAll('.dot').forEach((dot, index) => {
-                      dot.classList.toggle('active', index === currentSlide);
-                  });
-              }
+      function updateSlider() {
+        document.getElementById("sliderWrapper").style.transform =
+          `translateX(-${currentSlide * 100}%)`;
+        document.querySelectorAll(".dot").forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentSlide);
+        });
+      }
 
-              function moveSlide(direction) {
-                  currentSlide += direction;
-                  if (currentSlide < 0) currentSlide = totalSlides - 1;
-                  if (currentSlide >= totalSlides) currentSlide = 0;
-                  updateSlider();
-              }
+      function moveSlide(direction) {
+        currentSlide += direction;
+        if (currentSlide < 0) currentSlide = totalSlides - 1;
+        if (currentSlide >= totalSlides) currentSlide = 0;
+        updateSlider();
+      }
 
-              function goToSlide(index) {
-                  currentSlide = index;
-                  updateSlider();
-              }
+      function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+      }
 
-              setInterval(() => moveSlide(1), 5000);
+      setInterval(() => moveSlide(1), 5000);
 
-              let touchStartX = 0;
-              const sliderContainer = document.querySelector('.slider-container');
-              sliderContainer.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
-      , e => {
-                  const touchEndX = e.changedTouches[0].screenX;
-                  if (touchStartX - touchEndX > 50) moveSlide(1);
-                  if (touchEndX - touchStartX > 50) moveSlide(-1);
-              });
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      const sliderContainer = document.querySelector(".slider-container");
+
+      sliderContainer.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+
+      sliderContainer.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+
+        if (touchStartX - touchEndX > 50) {
+          moveSlide(1); // swipe left
+        }
+
+        if (touchEndX - touchStartX > 50) {
+          moveSlide(-1); // swipe right
+        }
+      });
     </script>
   </body>
 </html>
