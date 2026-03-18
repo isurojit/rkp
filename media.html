@@ -1,130 +1,670 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Media & Resources - CA Ravi Kumar Patwa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Instrument+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        .media-hero { padding: 120px 0 80px; background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%); }
-        .fb-feed-container { max-width: 800px; margin: 64px auto; padding: 40px; background: white; border-radius: 12px; box-shadow: var(--shadow-md); }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin: 48px 0; }
-        .gallery-item { position: relative; overflow: hidden; border-radius: 12px; box-shadow: var(--shadow-md); transition: var(--transition); }
-        .gallery-item:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-        .gallery-item img { width: 100%; height: 280px; object-fit: cover; display: block; }
+      .media-hero {
+        padding: 120px 0 80px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .media-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+      }
+      .media-hero .section-label {
+        color: var(--accent-light);
+      }
+      .media-hero .section-title {
+        color: white;
+      }
+      .media-hero .section-description {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* Image Slider */
+      .slider-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+      }
+      .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .slide {
+        min-width: 100%;
+        position: relative;
+      }
+      .slide img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        display: block;
+      }
+      .slide-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(0, 0, 0, 0.7) 70%,
+          transparent 100%
+        );
+        color: white;
+        padding: 40px 32px 24px;
+      }
+      .slide-caption h3 {
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+        font-family: var(--font-heading);
+      }
+      .slide-caption p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: var(--primary);
+        transition: var(--transition);
+        z-index: 10;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+      .slider-btn:hover {
+        background: white;
+        transform: translateY(-50%) scale(1.1);
+      }
+      .slider-btn.prev {
+        left: 20px;
+      }
+      .slider-btn.next {
+        right: 20px;
+      }
+      .slider-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 12px;
+        z-index: 10;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        border: 2px solid white;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      .dot.active {
+        background: white;
+        transform: scale(1.2);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .slide img {
+          height: 350px;
+        }
+        .slide-caption {
+          padding: 24px 20px 16px;
+        }
+        .slide-caption h3 {
+          font-size: 1.25rem;
+        }
+        .slider-btn {
+          width: 40px;
+          height: 40px;
+          font-size: 1.25rem;
+        }
+        .slider-btn.prev {
+          left: 10px;
+        }
+        .slider-btn.next {
+          right: 10px;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand"><span class="brand-name">CA RAVI KUMAR PATWA</span></div>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="profile.html" class="nav-link">Profile</a>
-                <a href="media.html" class="nav-link active">Media & Resources</a>
-                <a href="contributions.html" class="nav-link">Contributions</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+      <div class="container">
+        <div class="nav-brand">
+          <span class="brand-name">CA RAVI KUMAR PATWA</span>
         </div>
+        <div class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="profile.html" class="nav-link">Profile</a>
+          <a href="media.html" class="nav-link active">Media & Resources</a>
+          <a href="contributions.html" class="nav-link">Contributions</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
     </nav>
 
     <section class="media-hero">
-        <div class="container">
-            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-                <span class="section-label">Media & Resources</span>
-                <h1 class="section-title">Latest Updates & Activities</h1>
-                <p class="section-description">Stay connected with the latest professional activities, seminars, conferences, and social initiatives</p>
-            </div>
+      <div class="container" style="position: relative; z-index: 1">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center">
+          <span class="section-label">Media & Resources</span>
+          <h1 class="section-title">Latest Updates & Activities</h1>
+          <p class="section-description">
+            Stay connected with the latest professional activities, seminars,
+            conferences, and social initiatives
+          </p>
         </div>
+      </div>
     </section>
 
-    <section style="padding: 96px 0; background: white;">
-        <div class="container">
-            <h2 style="text-align: center; color: var(--primary); margin-bottom: 48px;">Professional Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_1_54_58_PM.jpeg" alt="Speaking at ICAI Event"></div>
-                <div class="gallery-item"><img src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_1_54_35_PM.jpeg" alt="Professional Event"></div>
-                <div class="gallery-item"><img src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_1_52_24_PM.jpeg" alt="Leadership Conference"></div>
-                <div class="gallery-item"><img src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_11_39_56_AM.jpeg" alt="Public Speaking"></div>
+    <!-- Image Slider Section -->
+    <section style="padding: 96px 0; background: white">
+      <div class="container">
+        <h2
+          style="
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 48px;
+            font-size: 2.5rem;
+          "
+        >
+          Professional Gallery
+        </h2>
+
+        <div class="slider-container">
+          <div class="slider-wrapper" id="sliderWrapper">
+            <div class="slide">
+              <img
+                src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_1_54_58_PM.jpeg"
+                alt="Speaking at ICAI Event"
+              />
+              <div class="slide-caption">
+                <h3>Speaking at ICAI National Conference</h3>
+                <p>
+                  Addressing Chartered Accountants at the Institute of Chartered
+                  Accountants of India, sharing insights on audit standards and
+                  professional excellence.
+                </p>
+              </div>
             </div>
+
+            <div class="slide">
+              <img
+                src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_1_54_35_PM.jpeg"
+                alt="Professional Event"
+              />
+              <div class="slide-caption">
+                <h3>Leadership Forum</h3>
+                <p>
+                  Participating in high-level discussions on the future of
+                  accounting profession and regulatory frameworks in India.
+                </p>
+              </div>
+            </div>
+
+            <div class="slide">
+              <img
+                src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_1_52_24_PM.jpeg"
+                alt="Leadership Conference"
+              />
+              <div class="slide-caption">
+                <h3>Credit Quality Assessment Conference</h3>
+                <p>
+                  Keynote speaker at the Centre for Credit Quality, discussing
+                  risk assessment and financial governance best practices.
+                </p>
+              </div>
+            </div>
+
+            <div class="slide">
+              <img
+                src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_11_39_56_AM.jpeg"
+                alt="Public Speaking"
+              />
+              <div class="slide-caption">
+                <h3>Industry Leadership Summit</h3>
+                <p>
+                  Delivering insights to industry leaders and stakeholders on
+                  corporate governance and compliance standards.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button class="slider-btn prev" onclick="moveSlide(-1)">‹</button>
+          <button class="slider-btn next" onclick="moveSlide(1)">›</button>
+          <div class="slider-dots" id="sliderDots"></div>
         </div>
+      </div>
     </section>
 
-    <section style="padding: 96px 0; background: var(--bg-secondary);">
-        <div class="container">
-            <div class="fb-feed-container">
-                <h2 style="text-align: center; color: var(--primary); margin-bottom: 24px;">Social Media Updates</h2>
-                <p style="text-align: center; color: var(--text-light); margin-bottom: 32px;">Follow CA Ravi Kumar Patwa on Facebook for the latest updates, professional insights, and community activities</p>
-                
-                <div style="text-align: center; padding: 60px 24px; background: var(--bg-tertiary); border-radius: 8px;">
-                    <svg viewBox="0 0 24 24" fill="var(--primary)" style="width: 64px; height: 64px; margin-bottom: 24px;">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                    <h3 style="color: var(--primary); margin-bottom: 16px;">Connect on Facebook</h3>
-                    <p style="color: var(--text-light); margin-bottom: 24px;">Visit the official Facebook page to view latest posts, activities, and professional updates</p>
-                    <a href="https://www.facebook.com/caravipatwa/" target="_blank" class="btn btn-primary">Visit Facebook Page</a>
-                </div>
+    <!-- Facebook Feed Section -->
+    <section style="padding: 96px 0; background: var(--bg-secondary)">
+      <div class="container">
+        <div
+          style="
+            max-width: 900px;
+            margin: 64px auto;
+            padding: 48px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+          "
+        >
+          <h2
+            style="
+              text-align: center;
+              color: var(--primary);
+              margin-bottom: 16px;
+              font-size: 2rem;
+            "
+          >
+            Latest Social Media Updates
+          </h2>
+          <p
+            style="
+              text-align: center;
+              color: var(--text-light);
+              margin-bottom: 32px;
+            "
+          >
+            Follow CA Ravi Kumar Patwa on Facebook for professional insights and
+            community activities
+          </p>
+
+          <!-- Facebook Page Plugin -->
+          <div id="fb-root"></div>
+          <div
+            style="display: flex; justify-content: center; margin-bottom: 48px"
+          >
+            <div
+              class="fb-page"
+              data-href="https://www.facebook.com/caravipatwa/"
+              data-tabs="timeline"
+              data-width="500"
+              data-height="600"
+              data-small-header="false"
+              data-adapt-container-width="true"
+              data-hide-cover="false"
+              data-show-facepile="true"
+            >
+              <blockquote
+                cite="https://www.facebook.com/caravipatwa/"
+                class="fb-xfbml-parse-ignore"
+              >
+                <a href="https://www.facebook.com/caravipatwa/"
+                  >CA Ravi Patwa</a
+                >
+              </blockquote>
             </div>
+          </div>
+
+          <!-- Direct Link -->
+          <div
+            style="
+              text-align: center;
+              padding: 60px 24px;
+              background: linear-gradient(
+                135deg,
+                var(--primary) 0%,
+                var(--primary-light) 100%
+              );
+              border-radius: 12px;
+            "
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="white"
+              style="width: 64px; height: 64px; margin-bottom: 24px"
+            >
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              />
+            </svg>
+            <h3 style="color: white; margin-bottom: 16px; font-size: 1.75rem">
+              Connect on Facebook
+            </h3>
+            <p
+              style="
+                color: rgba(255, 255, 255, 0.9);
+                margin-bottom: 24px;
+                font-size: 1.125rem;
+              "
+            >
+              Visit the official Facebook page to view all posts and updates
+            </p>
+            <a
+              href="https://www.facebook.com/caravipatwa/"
+              target="_blank"
+              class="btn btn-outline-light"
+              style="background: white; color: var(--primary); border: none"
+              >Visit Facebook Page</a
+            >
+          </div>
         </div>
+      </div>
     </section>
 
-    <section style="padding: 96px 0; background: white;">
-        <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="text-align: center; color: var(--primary); margin-bottom: 48px;">Professional Resources</h2>
-                
-                <div style="display: grid; gap: 24px;">
-                    <div style="padding: 32px; background: var(--bg-secondary); border-radius: 12px; border-left: 4px solid var(--accent);">
-                        <h3 style="color: var(--primary); margin-bottom: 12px;">LinkedIn Profile</h3>
-                        <p style="color: var(--text-light); margin-bottom: 16px;">Connect for professional networking and industry insights</p>
-                        <a href="https://www.linkedin.com/in/ravi-kumar-patwa-6760015/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">Visit LinkedIn →</a>
-                    </div>
-                    
-                    <div style="padding: 32px; background: var(--bg-secondary); border-radius: 12px; border-left: 4px solid var(--accent);">
-                        <h3 style="color: var(--primary); margin-bottom: 12px;">Firm Website</h3>
-                        <p style="color: var(--text-light); margin-bottom: 16px;">Explore RKP Associates services and expertise</p>
-                        <a href="https://rkpassociates.in/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">Visit Website →</a>
-                    </div>
-                    
-                    <div style="padding: 32px; background: var(--bg-secondary); border-radius: 12px; border-left: 4px solid var(--accent);">
-                        <h3 style="color: var(--primary); margin-bottom: 12px;">Instagram</h3>
-                        <p style="color: var(--text-light); margin-bottom: 16px;">Follow for updates and professional activities</p>
-                        <a href="https://www.instagram.com/ravipatwa12/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">Visit Instagram →</a>
-                    </div>
-                </div>
+    <!-- Resources Section -->
+    <section style="padding: 96px 0; background: white">
+      <div class="container">
+        <div style="max-width: 1000px; margin: 0 auto">
+          <h2
+            style="
+              text-align: center;
+              color: var(--primary);
+              margin-bottom: 48px;
+              font-size: 2.5rem;
+            "
+          >
+            Professional Resources
+          </h2>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 24px;
+            "
+          >
+            <div
+              style="
+                padding: 32px;
+                background: var(--bg-secondary);
+                border-radius: 12px;
+                border-left: 4px solid var(--accent);
+                transition: var(--transition);
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-4px)';
+                this.style.boxShadow = 'var(--shadow-md)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div style="font-size: 2.5rem; margin-bottom: 16px">💼</div>
+              <h3
+                style="
+                  color: var(--primary);
+                  margin-bottom: 12px;
+                  font-size: 1.25rem;
+                "
+              >
+                LinkedIn
+              </h3>
+              <p style="color: var(--text-light); margin-bottom: 16px">
+                Professional networking and industry insights
+              </p>
+              <a
+                href="https://www.linkedin.com/in/ravi-kumar-patwa-6760015/"
+                target="_blank"
+                style="
+                  color: var(--accent);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >Visit →</a
+              >
             </div>
+
+            <div
+              style="
+                padding: 32px;
+                background: var(--bg-secondary);
+                border-radius: 12px;
+                border-left: 4px solid var(--accent);
+                transition: var(--transition);
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-4px)';
+                this.style.boxShadow = 'var(--shadow-md)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div style="font-size: 2.5rem; margin-bottom: 16px">🏢</div>
+              <h3
+                style="
+                  color: var(--primary);
+                  margin-bottom: 12px;
+                  font-size: 1.25rem;
+                "
+              >
+                Firm Website
+              </h3>
+              <p style="color: var(--text-light); margin-bottom: 16px">
+                RKP Associates services and expertise
+              </p>
+              <a
+                href="https://rkpassociates.in/"
+                target="_blank"
+                style="
+                  color: var(--accent);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >Visit →</a
+              >
+            </div>
+
+            <div
+              style="
+                padding: 32px;
+                background: var(--bg-secondary);
+                border-radius: 12px;
+                border-left: 4px solid var(--accent);
+                transition: var(--transition);
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-4px)';
+                this.style.boxShadow = 'var(--shadow-md)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div style="font-size: 2.5rem; margin-bottom: 16px">📸</div>
+              <h3
+                style="
+                  color: var(--primary);
+                  margin-bottom: 12px;
+                  font-size: 1.25rem;
+                "
+              >
+                Instagram
+              </h3>
+              <p style="color: var(--text-light); margin-bottom: 16px">
+                Professional activities and updates
+              </p>
+              <a
+                href="https://www.instagram.com/ravipatwa12/"
+                target="_blank"
+                style="
+                  color: var(--accent);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >Visit →</a
+              >
+            </div>
+
+            <div
+              style="
+                padding: 32px;
+                background: var(--bg-secondary);
+                border-radius: 12px;
+                border-left: 4px solid var(--accent);
+                transition: var(--transition);
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-4px)';
+                this.style.boxShadow = 'var(--shadow-md)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+              "
+            >
+              <div style="font-size: 2.5rem; margin-bottom: 16px">🐦</div>
+              <h3
+                style="
+                  color: var(--primary);
+                  margin-bottom: 12px;
+                  font-size: 1.25rem;
+                "
+              >
+                Twitter / X
+              </h3>
+              <p style="color: var(--text-light); margin-bottom: 16px">
+                Latest thoughts and announcements
+              </p>
+              <a
+                href="https://x.com/ravipatwa"
+                target="_blank"
+                style="
+                  color: var(--accent);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >Visit →</a
+              >
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>CA Ravi Kumar Patwa</h3>
-                    <p>Managing Partner, RKP Associates<br>Chartered Accountants</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="media.html">Media & Resources</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p>4M, New Town Square, Chinar Park<br>Rajarhat, Kolkata - 700136</p>
-                    <p>Phone: +91 94350 71192<br>Email: ravipatwa@hotmail.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 CA Ravi Kumar Patwa. All rights reserved.</p>
-            </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>CA Ravi Kumar Patwa</h3>
+            <p>Managing Partner, RKP Associates<br />Chartered Accountants</p>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="profile.html">Profile</a></li>
+              <li><a href="media.html">Media</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <p>
+              4M, New Town Square, Chinar Park<br />Rajarhat, Kolkata - 700136
+            </p>
+            <p>Phone: +91 94350 71192<br />Email: ravipatwa@hotmail.com</p>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 CA Ravi Kumar Patwa. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
+
+    <!-- Facebook SDK -->
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"
+    ></script>
+
     <script src="script.js"></script>
-</body>
+    <script>
+      // Image Slider
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+      const totalSlides = slides.length;
+      const dotsContainer = document.getElementById("sliderDots");
+
+      // Create dots
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("div");
+        dot.className = "dot";
+        if (i === 0) dot.classList.add("active");
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+
+      function updateSlider() {
+        document.getElementById("sliderWrapper").style.transform =
+          `translateX(-${currentSlide * 100}%)`;
+        document.querySelectorAll(".dot").forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentSlide);
+        });
+      }
+
+      function moveSlide(direction) {
+        currentSlide += direction;
+        if (currentSlide < 0) currentSlide = totalSlides - 1;
+        if (currentSlide >= totalSlides) currentSlide = 0;
+        updateSlider();
+      }
+
+      function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+      }
+
+      // Auto slide
+      setInterval(() => moveSlide(1), 5000);
+
+      // Touch support
+      let touchStartX = 0;
+      const sliderContainer = document.querySelector(".slider-container");
+      sliderContainer.addEventListener(
+        "touchstart",
+        (e) => (touchStartX = e.changedTouches[0].screenX),
+      );
+      sliderContainer.addEventListener("touchend", (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) moveSlide(1);
+        if (touchEndX - touchStartX > 50) moveSlide(-1);
+      });
+    </script>
+  </body>
 </html>
