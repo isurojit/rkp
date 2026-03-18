@@ -202,92 +202,6 @@
         right: -20px;
       }
 
-      /* Custom Mock FB Cards */
-      .mock-fb-card {
-        background: white;
-        border-radius: 12px;
-        padding: 24px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e4e6eb;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        text-decoration: none;
-        color: inherit;
-        transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease;
-        cursor: pointer;
-      }
-      .mock-fb-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-      }
-      .mock-fb-header {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 16px;
-      }
-      .mock-fb-avatar {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: var(--primary, #003b73);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 1.1rem;
-      }
-      .mock-fb-name {
-        font-weight: 600;
-        color: #1c1e21;
-        margin: 0 0 2px 0;
-        font-size: 1.1rem;
-      }
-      .mock-fb-date {
-        font-size: 0.85rem;
-        color: #65676b;
-        margin: 0;
-      }
-      .mock-fb-content {
-        flex-grow: 1;
-        margin-bottom: 16px;
-        color: #050505;
-        line-height: 1.6;
-      }
-      .mock-fb-image {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-bottom: 16px;
-        border: 1px solid #e4e6eb;
-      }
-      .mock-fb-footer {
-        display: flex;
-        border-top: 1px solid #e4e6eb;
-        padding-top: 12px;
-        gap: 24px;
-        color: #65676b;
-        font-weight: 600;
-        font-size: 0.95rem;
-      }
-      .mock-fb-action {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 12px;
-        transition: background 0.2s;
-        border-radius: 6px;
-      }
-      .mock-fb-card:hover .mock-fb-action {
-        /* Adds a subtle interaction hint when the card is hovered */
-        background: #f0f2f5;
-      }
-
       /* Downloads Section */
       .download-grid {
         display: grid;
@@ -368,12 +282,7 @@
         transform: translateY(-8px);
         box-shadow: var(--shadow-lg);
       }
-      .social-header {
-        display: flex;
-        align-items: center;
-        gap: 18px;
-        margin-bottom: 24px;
-      }
+
       .social-icon {
         width: 64px;
         height: 64px;
@@ -479,6 +388,171 @@
         font-weight: bold;
         font-size: 1.125rem;
       }
+      .social-card {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        transition: 0.3s;
+      }
+
+      .social-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      }
+
+      .social-card .icon {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      .social-card h3 {
+        margin: 10px 0 5px;
+        color: var(--primary);
+      }
+
+      .social-card p {
+        margin: 0;
+        color: var(--text-light);
+        font-size: 14px;
+      }
+
+      .social-card .desc {
+        margin: 15px 0;
+        font-size: 14px;
+      }
+
+      .social-card a {
+        display: inline-block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: white;
+        background: var(--primary);
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+      }
+      .social-hub {
+        padding: 100px 0;
+        background: #f9fbfd;
+      }
+
+      .social-header {
+        text-align: center;
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .social-header h2 {
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .social-header p {
+        color: var(--text-light);
+        margin-bottom: 50px;
+      }
+
+      /* Layout */
+      .social-layout {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 30px;
+      }
+
+      /* Facebook Feed */
+      .fb-feed {
+        background: white;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        text-align: center;
+      }
+
+      .fb-feed h3 {
+        margin-bottom: 15px;
+        color: var(--primary);
+      }
+
+      .fb-feed a {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 22px;
+        background: #1877f2;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+      }
+
+      /* Social Cards Grid */
+      .social-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .social-card {
+        background: white;
+        padding: 20px;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        transition: 0.3s;
+      }
+
+      .social-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+      }
+
+      .social-card .icon {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .social-card h3 {
+        margin: 10px 0 5px;
+        color: var(--primary);
+      }
+
+      .social-card p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--text-light);
+      }
+
+      .social-card .desc {
+        margin: 12px 0;
+      }
+
+      .social-card a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 18px;
+        background: var(--primary);
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 14px;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .social-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .social-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .social-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
       /* Responsive */
       @media (max-width: 768px) {
@@ -552,6 +626,7 @@
       </div>
     </section>
 
+    <!-- 1. Professional Gallery -->
     <section style="padding: 96px 0; background: white">
       <div class="container">
         <h2
@@ -627,6 +702,7 @@
       </div>
     </section>
 
+    <!-- 2. Downloadable Resources -->
     <section style="padding: 96px 0; background: var(--bg-secondary)">
       <div class="container">
         <h2
@@ -801,387 +877,85 @@
       </div>
     </section>
 
-    <section style="padding: 96px 0; background: white">
+    <section class="social-hub">
       <div class="container">
-        <h2
-          style="text-align: center; color: var(--primary); margin-bottom: 20px"
-        >
-          Latest Social Media Updates
-        </h2>
-        <p
-          style="
-            text-align: center;
-            color: var(--text-light);
-            margin-bottom: 56px;
-          "
-        >
-          Stay updated with recent Facebook posts and professional activities
-        </p>
+        <!-- Heading -->
+        <div class="social-header">
+          <h2>Social Media Hub</h2>
+          <p>
+            Stay connected with latest updates, insights and professional
+            activities
+          </p>
+        </div>
 
-        <div
-          style="
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border-radius: 20px;
-            padding: 48px;
-            box-shadow: var(--shadow-lg);
-          "
-        >
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              margin-bottom: 40px;
-              padding-bottom: 28px;
-              border-bottom: 3px solid #eee;
-            "
-          >
-            <div style="display: flex; align-items: center; gap: 20px">
-              <div
-                style="
-                  width: 72px;
-                  height: 72px;
-                  background: linear-gradient(135deg, #1877f2 0%, #0a5ac4 100%);
-                  border-radius: 18px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 2.5rem;
-                  box-shadow: 0 6px 20px rgba(24, 119, 242, 0.3);
-                "
+        <!-- Main Layout -->
+        <div class="social-layout">
+          <!-- LEFT: Facebook Feed -->
+          <div class="fb-feed">
+            <h3>Facebook Updates</h3>
+
+            <iframe
+              src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/caravipatwa/&tabs=timeline&width=500&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+              width="100%"
+              height="700"
+              style="border: none; overflow: hidden; border-radius: 16px"
+              scrolling="no"
+              frameborder="0"
+              allowfullscreen="true"
+            >
+            </iframe>
+
+            <a href="https://www.facebook.com/caravipatwa/" target="_blank">
+              Visit Facebook →
+            </a>
+          </div>
+
+          <!-- RIGHT: Social Cards -->
+          <div class="social-grid">
+            <div class="social-card">
+              <div class="icon">📘</div>
+              <h3>Facebook</h3>
+              <p>@caravipatwa</p>
+              <p class="desc">Professional updates & insights.</p>
+              <a href="https://www.facebook.com/caravipatwa/" target="_blank"
+                >Follow →</a
               >
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-                  <path
-                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h3
-                  style="
-                    color: var(--primary);
-                    font-size: 2rem !important;
-                    margin-bottom: 8px;
-                  "
-                >
-                  Facebook Posts
-                </h3>
-                <p
-                  style="
-                    color: #666;
-                    margin: 0;
-                    font-size: 1.0625rem !important;
-                  "
-                >
-                  @caravipatwa - Professional updates and insights
-                </p>
-              </div>
             </div>
-            <a
-              href="https://www.facebook.com/caravipatwa/"
-              target="_blank"
-              class="btn btn-primary"
-              style="
-                padding: 10px 24px;
-                text-decoration: none;
-                background: var(--primary);
-                color: white;
-                border-radius: 8px;
-              "
-              >Follow Page</a
-            >
-          </div>
 
-          <div class="fb-carousel-container">
-            <button class="carousel-btn prev" onclick="scrollFBCarousel(-1)">
-              ‹
-            </button>
-            <div class="fb-carousel-wrapper" id="fbCarouselWrapper">
-              <div class="fb-post-container">
-                <a
-                  href="https://www.facebook.com/caravipatwa/posts/YOUR_POST_ID_1"
-                  target="_blank"
-                  class="mock-fb-card"
-                >
-                  <div class="mock-fb-header">
-                    <div class="mock-fb-avatar">RKP</div>
-                    <div>
-                      <h4 class="mock-fb-name">CA Ravi Kumar Patwa</h4>
-                      <p class="mock-fb-date">2 days ago</p>
-                    </div>
-                  </div>
-                  <p class="mock-fb-content">
-                    Honored to speak at the recent ICAI National Conference
-                    regarding the latest amendments in auditing standards. The
-                    engagement from young professionals was truly inspiring!
-                    📊💼 #ICAI #CharteredAccountant #AuditStandards
-                  </p>
-                  <img
-                    src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_1_54_58_PM.jpeg"
-                    alt="Event Highlights"
-                    class="mock-fb-image"
-                  />
-                  <div class="mock-fb-footer">
-                    <span class="mock-fb-action">👍 Like</span>
-                    <span class="mock-fb-action">💬 Comment</span>
-                    <span class="mock-fb-action">🔗 Share</span>
-                  </div>
-                </a>
-              </div>
-
-              <div class="fb-post-container">
-                <a
-                  href="https://www.facebook.com/caravipatwa/posts/YOUR_POST_ID_2"
-                  target="_blank"
-                  class="mock-fb-card"
-                >
-                  <div class="mock-fb-header">
-                    <div class="mock-fb-avatar">RKP</div>
-                    <div>
-                      <h4 class="mock-fb-name">CA Ravi Kumar Patwa</h4>
-                      <p class="mock-fb-date">5 days ago</p>
-                    </div>
-                  </div>
-                  <p class="mock-fb-content">
-                    We've just uploaded a new comprehensive guide on Continuous
-                    Professional Education (CPE) requirements for 2026. Make
-                    sure to download it from our website's resources section.
-                    Let's keep learning! 📚
-                  </p>
-                  <img
-                    src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_1_54_35_PM.jpeg"
-                    alt="Resource Guide"
-                    class="mock-fb-image"
-                  />
-                  <div class="mock-fb-footer">
-                    <span class="mock-fb-action">👍 Like</span>
-                    <span class="mock-fb-action">💬 Comment</span>
-                    <span class="mock-fb-action">🔗 Share</span>
-                  </div>
-                </a>
-              </div>
-
-              <div class="fb-post-container">
-                <a
-                  href="https://www.facebook.com/caravipatwa/posts/YOUR_POST_ID_3"
-                  target="_blank"
-                  class="mock-fb-card"
-                >
-                  <div class="mock-fb-header">
-                    <div class="mock-fb-avatar">RKP</div>
-                    <div>
-                      <h4 class="mock-fb-name">CA Ravi Kumar Patwa</h4>
-                      <p class="mock-fb-date">1 week ago</p>
-                    </div>
-                  </div>
-                  <p class="mock-fb-content">
-                    Important update: The deadline for submitting bank audit
-                    empanelment forms has been extended. Ensure all your
-                    documentation is aligned with the new RBI guidelines. Feel
-                    free to reach out if you have questions regarding the
-                    process.
-                  </p>
-                  <img
-                    src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-17_at_1_52_24_PM.jpeg"
-                    alt="Banking Updates"
-                    class="mock-fb-image"
-                  />
-                  <div class="mock-fb-footer">
-                    <span class="mock-fb-action">👍 Like</span>
-                    <span class="mock-fb-action">💬 Comment</span>
-                    <span class="mock-fb-action">🔗 Share</span>
-                  </div>
-                </a>
-              </div>
+            <div class="social-card">
+              <div class="icon">💼</div>
+              <h3>LinkedIn</h3>
+              <p>Ravi Kumar Patwa</p>
+              <p class="desc">Industry insights & networking.</p>
+              <a
+                href="https://www.linkedin.com/in/ravi-kumar-patwa-6760015/"
+                target="_blank"
+                >Connect →</a
+              >
             </div>
-            <button class="carousel-btn next" onclick="scrollFBCarousel(1)">
-              ›
-            </button>
+
+            <div class="social-card">
+              <div class="icon">📸</div>
+              <h3>Instagram</h3>
+              <p>@ravipatwa12</p>
+              <p class="desc">Moments & highlights.</p>
+              <a href="https://www.instagram.com/ravipatwa12/" target="_blank"
+                >Follow →</a
+              >
+            </div>
+
+            <div class="social-card">
+              <div class="icon">𝕏</div>
+              <h3>Twitter / X</h3>
+              <p>@ravipatwa</p>
+              <p class="desc">Quick updates & commentary.</p>
+              <a href="https://x.com/ravipatwa" target="_blank">Follow →</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <section style="padding: 96px 0; background: var(--bg-secondary)">
-      <div class="container">
-        <h2
-          style="text-align: center; color: var(--primary); margin-bottom: 56px"
-        >
-          Connect on All Platforms
-        </h2>
-
-        <div class="social-grid">
-          <div class="social-card">
-            <div class="social-header">
-              <div class="social-icon facebook">📘</div>
-              <div class="social-info">
-                <h3>Facebook</h3>
-                <p>@caravipatwa</p>
-              </div>
-            </div>
-            <p
-              style="
-                color: var(--text-secondary);
-                margin-bottom: 24px;
-                line-height: 1.7;
-              "
-            >
-              Latest professional updates, event coverage, and insights from the
-              accounting profession.
-            </p>
-            <div class="social-stats">
-              <div class="stat">
-                <div class="stat-number">2.5K</div>
-                <div class="stat-label">Followers</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number">150+</div>
-                <div class="stat-label">Posts</div>
-              </div>
-            </div>
-            <a
-              href="https://www.facebook.com/caravipatwa/"
-              target="_blank"
-              class="btn btn-primary"
-              style="
-                width: 100%;
-                justify-content: center;
-                display: flex;
-                font-size: 1.0625rem;
-              "
-              >Follow on Facebook</a
-            >
-          </div>
-
-          <div class="social-card">
-            <div class="social-header">
-              <div class="social-icon linkedin">💼</div>
-              <div class="social-info">
-                <h3>LinkedIn</h3>
-                <p>Ravi Kumar Patwa</p>
-              </div>
-            </div>
-            <p
-              style="
-                color: var(--text-secondary);
-                margin-bottom: 24px;
-                line-height: 1.7;
-              "
-            >
-              Professional networking, industry insights, and thought leadership
-              in accounting and auditing.
-            </p>
-            <div class="social-stats">
-              <div class="stat">
-                <div class="stat-number">5000+</div>
-                <div class="stat-label">Connections</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Followers</div>
-              </div>
-            </div>
-            <a
-              href="https://www.linkedin.com/in/ravi-kumar-patwa-6760015/"
-              target="_blank"
-              class="btn btn-primary"
-              style="
-                width: 100%;
-                justify-content: center;
-                display: flex;
-                font-size: 1.0625rem;
-              "
-              >Connect on LinkedIn</a
-            >
-          </div>
-
-          <div class="social-card">
-            <div class="social-header">
-              <div class="social-icon instagram">📸</div>
-              <div class="social-info">
-                <h3>Instagram</h3>
-                <p>@ravipatwa12</p>
-              </div>
-            </div>
-            <p
-              style="
-                color: var(--text-secondary);
-                margin-bottom: 24px;
-                line-height: 1.7;
-              "
-            >
-              Behind-the-scenes moments, event highlights, and professional
-              journey snapshots.
-            </p>
-            <div class="social-stats">
-              <div class="stat">
-                <div class="stat-number">1.2K</div>
-                <div class="stat-label">Followers</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number">75+</div>
-                <div class="stat-label">Posts</div>
-              </div>
-            </div>
-            <a
-              href="https://www.instagram.com/ravipatwa12/"
-              target="_blank"
-              class="btn btn-primary"
-              style="
-                width: 100%;
-                justify-content: center;
-                display: flex;
-                font-size: 1.0625rem;
-              "
-              >Follow on Instagram</a
-            >
-          </div>
-
-          <div class="social-card">
-            <div class="social-header">
-              <div class="social-icon twitter">𝕏</div>
-              <div class="social-info">
-                <h3>Twitter / X</h3>
-                <p>@ravipatwa</p>
-              </div>
-            </div>
-            <p
-              style="
-                color: var(--text-secondary);
-                margin-bottom: 24px;
-                line-height: 1.7;
-              "
-            >
-              Quick updates, professional announcements, and industry commentary
-              in real-time.
-            </p>
-            <div class="social-stats">
-              <div class="stat">
-                <div class="stat-number">850</div>
-                <div class="stat-label">Followers</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number">250+</div>
-                <div class="stat-label">Posts</div>
-              </div>
-            </div>
-            <a
-              href="https://x.com/ravipatwa"
-              target="_blank"
-              class="btn btn-primary"
-              style="
-                width: 100%;
-                justify-content: center;
-                display: flex;
-                font-size: 1.0625rem;
-              "
-              >Follow on X</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- 5. ICAI Resources & Opportunities -->
     <section style="padding: 96px 0; background: white">
       <div class="container">
         <h2
@@ -1200,6 +974,7 @@
         </p>
 
         <div class="icai-grid">
+          <!-- Examinations -->
           <div class="icai-category">
             <h3>📝 Examinations</h3>
             <ul class="icai-links">
@@ -1235,6 +1010,7 @@
             </ul>
           </div>
 
+          <!-- Registration -->
           <div class="icai-category">
             <h3>📋 Registration & Forms</h3>
             <ul class="icai-links">
@@ -1270,6 +1046,7 @@
             </ul>
           </div>
 
+          <!-- Empanelment -->
           <div class="icai-category">
             <h3>🏛️ Empanelment</h3>
             <ul class="icai-links">
@@ -1311,6 +1088,7 @@
             </ul>
           </div>
 
+          <!-- Professional Development -->
           <div class="icai-category">
             <h3>🎓 CPE & Learning</h3>
             <ul class="icai-links">
@@ -1348,6 +1126,7 @@
             </ul>
           </div>
 
+          <!-- Career Opportunities -->
           <div class="icai-category">
             <h3>💼 Opportunities</h3>
             <ul class="icai-links">
@@ -1385,6 +1164,7 @@
             </ul>
           </div>
 
+          <!-- Publications -->
           <div class="icai-category">
             <h3>📚 Publications</h3>
             <ul class="icai-links">
@@ -1426,6 +1206,7 @@
             </ul>
           </div>
 
+          <!-- Digital Services -->
           <div class="icai-category">
             <h3>💻 Digital Services</h3>
             <ul class="icai-links">
@@ -1457,6 +1238,7 @@
             </ul>
           </div>
 
+          <!-- Committees & Boards -->
           <div class="icai-category">
             <h3>🏢 Committees & Boards</h3>
             <ul class="icai-links">
@@ -1520,9 +1302,13 @@
           <div class="footer-col">
             <h4>Contact</h4>
             <p>
-              4M, New Town Square, Chinar Park<br />Rajarhat, Kolkata - 700136
+              4M, New Town Square, Chinar Park<br />
+              Rajarhat, Kolkata - 700136
             </p>
-            <p>Phone: +91 94350 71192<br />Email: ravipatwa@hotmail.com</p>
+            <p>
+              Phone: +91 94350 71192<br />
+              Email: ravipatwa@hotmail.com
+            </p>
           </div>
         </div>
         <div class="footer-bottom">
@@ -1531,66 +1317,59 @@
       </div>
     </footer>
 
+    <!-- Facebook SDK -->
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0&appId=YOUR_APP_ID"
+    ></script>
+
     <script src="script.js"></script>
     <script>
-      // Image Slider
-      let currentSlide = 0;
-      const slides = document.querySelectorAll(".slide");
-      const totalSlides = slides.length;
-      const dotsContainer = document.getElementById("sliderDots");
+              // Image Slider
+              let currentSlide = 0;
+              const slides = document.querySelectorAll('.slide');
+              const totalSlides = slides.length;
+              const dotsContainer = document.getElementById('sliderDots');
 
-      for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement("div");
-        dot.className = "dot";
-        if (i === 0) dot.classList.add("active");
-        dot.onclick = () => goToSlide(i);
-        dotsContainer.appendChild(dot);
-      }
+              for (let i = 0; i < totalSlides; i++) {
+                  const dot = document.createElement('div');
+                  dot.className = 'dot';
+                  if (i === 0) dot.classList.add('active');
+                  dot.onclick = () => goToSlide(i);
+                  dotsContainer.appendChild(dot);
+              }
 
-      function updateSlider() {
-        document.getElementById("sliderWrapper").style.transform =
-          `translateX(-${currentSlide * 100}%)`;
-        document.querySelectorAll(".dot").forEach((dot, index) => {
-          dot.classList.toggle("active", index === currentSlide);
-        });
-      }
+              function updateSlider() {
+                  document.getElementById('sliderWrapper').style.transform = `translateX(-${currentSlide * 100}%)`;
+                  document.querySelectorAll('.dot').forEach((dot, index) => {
+                      dot.classList.toggle('active', index === currentSlide);
+                  });
+              }
 
-      function moveSlide(direction) {
-        currentSlide += direction;
-        if (currentSlide < 0) currentSlide = totalSlides - 1;
-        if (currentSlide >= totalSlides) currentSlide = 0;
-        updateSlider();
-      }
+              function moveSlide(direction) {
+                  currentSlide += direction;
+                  if (currentSlide < 0) currentSlide = totalSlides - 1;
+                  if (currentSlide >= totalSlides) currentSlide = 0;
+                  updateSlider();
+              }
 
-      function goToSlide(index) {
-        currentSlide = index;
-        updateSlider();
-      }
+              function goToSlide(index) {
+                  currentSlide = index;
+                  updateSlider();
+              }
 
-      setInterval(() => moveSlide(1), 5000);
+              setInterval(() => moveSlide(1), 5000);
 
-      let touchStartX = 0;
-      const sliderContainer = document.querySelector(".slider-container");
-      sliderContainer.addEventListener(
-        "touchstart",
-        (e) => (touchStartX = e.changedTouches[0].screenX),
-      );
-      sliderContainer.addEventListener("touchend", (e) => {
-        const touchEndX = e.changedTouches[0].screenX;
-        if (touchStartX - touchEndX > 50) moveSlide(1);
-        if (touchEndX - touchStartX > 50) moveSlide(-1);
-      });
-
-      // Facebook Carousel Scroll Logic
-      function scrollFBCarousel(direction) {
-        const wrapper = document.getElementById("fbCarouselWrapper");
-        // Calculate the width of one card + the gap (500px + 24px)
-        const scrollAmount = 524;
-        wrapper.scrollBy({
-          left: direction * scrollAmount,
-          behavior: "smooth",
-        });
-      }
+              let touchStartX = 0;
+              const sliderContainer = document.querySelector('.slider-container');
+              sliderContainer.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
+      , e => {
+                  const touchEndX = e.changedTouches[0].screenX;
+                  if (touchStartX - touchEndX > 50) moveSlide(1);
+                  if (touchEndX - touchStartX > 50) moveSlide(-1);
+              });
     </script>
   </body>
 </html>
